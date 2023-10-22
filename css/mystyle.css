@@ -1,0 +1,33 @@
+/* SECCIÓN DIRECTORIO */
+
+/* LOS ICONOS EDIT Y DEL DE LA TABLA DIRECTORIO*/
+
+.edit-table {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: rgb(2, 159, 2);
+  border-radius: 8px;
+}
+
+.edit-table:hover {
+  background-color: rgb(2, 159, 2);
+  color: white;
+}
+
+.del-table {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: rgb(189, 42, 42);
+  border-radius: 8px;
+}
+
+.del-table:hover {
+  background-color: rgb(189, 42, 42);
+  color: white;
+}
+
+.edit-modal {
+  background-color: transparent;
+}
