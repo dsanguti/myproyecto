@@ -31,4 +31,4 @@ if (isset($_POST['edit'])) {
 }
 
 
-header('location: http://localhost/theproject/#/directorio');
+header('location: http://localhost/myproyecto/#/directorio');

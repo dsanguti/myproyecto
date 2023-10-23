@@ -3,7 +3,7 @@
         <div class="col">
 
             <!-- Modal -->
-            <div class="modal fade modal-lg" id="modal-edit-directorio" tabindex="-1" aria-labelledby="modal-edit-directorio" aria-hidden="true">
+            <div class="modal fade modal-lg" id="modal-edit-directorio<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="modal-edit-directorio" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

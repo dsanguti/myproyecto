@@ -9,7 +9,7 @@ function Carga_Inicio() {
       document.getElementById("main").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "/theproject/inicio.html", true);
+  xhttp.open("GET", "/myproyecto/inicio.html", true);
   xhttp.send();
 }
 
@@ -36,7 +36,7 @@ function Carga_Directorio() {
       document.getElementById("main").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "/theproject/seccion/directorio/directorio.php", true);
+  xhttp.open("GET", "/myproyecto/seccion/directorio/directorio.php", true);
   xhttp.send();
 }
 
@@ -49,7 +49,7 @@ function Carga_Inventario() {
       document.getElementById("main").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "/theproject/seccion/inventario/inventario.php", true);
+  xhttp.open("GET", "/myproyecto/seccion/inventario/inventario.php", true);
   xhttp.send();
 }
 

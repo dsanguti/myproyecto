@@ -11,9 +11,9 @@ include('menuhorizontal.php');
 
 ?>
 
-<div id="main">
+<main id="main">
     <h1>Hola Mundo de Nuevo</h1>
-</div>
+</main>
 
 
 
@@ -31,16 +31,16 @@ include('menuhorizontal.php');
 
 
 <script>
-// document.addEventListener("DOMContentLoaded", function(e) {
-//     e.preventDefault()
+    // document.addEventListener("DOMContentLoaded", function(e) {
+    //     e.preventDefault()
 
 
-// })
+    // })
 
 
 
 
-// Se cierra el modal para quedarse en directorio
+    // Se cierra el modal para quedarse en directorio
 </script>
 
 
