@@ -7,7 +7,8 @@
     <div class="container">
         <div class="row">
             <div class="col mt-4">
-                <h2>(Poner icono para Agregar persona)</h2>
+                <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
+                    Nuevo</a>
             </div>
         </div>
         <div class="row">
@@ -60,7 +61,7 @@
 
                                 <!-- El modal de Eliminar-->
                                 <?php include("./modal/modal_eliminar.php");
-                                    ?>
+                                        ?>
                         </tr>
 
                         <?php
@@ -69,7 +70,7 @@
                             echo 'Error con la conexión: ' . $e->getMessage();
                         }
                         $database->cerrar();
-                            ?>
+                        ?>
 
                     </tbody>
                 </table>
@@ -84,6 +85,10 @@
             <?php
             include("../directorio/modal/modal_eliminar.php");
             ?>
+
+            <!-- El modal para insertar un nuevo contacto en el Directorio-->
+            <?php include ("../directorio/modal/modal_insertar.php") ?>
+
         </div>
 
 
