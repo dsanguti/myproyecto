@@ -54,7 +54,8 @@
                                     data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
                                     <i class='bi bi-pencil-square'></i></button>
                             <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table'
-                                    data-bs-toggle='modal' data-bs-target='#modal-del-directorio'><i
+                                    data-bs-toggle='modal'
+                                    data-bs-target='#modal-del-directorio<?php echo $row['id'];?>'><i
                                         class='bi bi-trash'></i></button>
                                 <!-- El modal de editar-->
                                 <?php include("./modal/modal_editar.php"); ?>
