@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row mb-2">
             <div class="col mt-4">
                 <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
                     Nuevo</a>
@@ -39,30 +39,26 @@
                             $sql = 'SELECT * FROM directorio';
                             foreach ($db->query($sql) as $row) {
                         ?>
-                        <tr>
+                                <tr>
 
-                            <td style='display:none;'><?php echo $row['id'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['puesto'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['nombre'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['apellidos'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['oficina'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['telefono'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['extension'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['correo'] ?></td>
-                            <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table'
-                                    data-bs-toggle='modal'
-                                    data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
-                                    <i class='bi bi-pencil-square'></i></button>
-                            <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table'
-                                    data-bs-toggle='modal' data-bs-target='#modal-del-directorio'><i
-                                        class='bi bi-trash'></i></button>
-                                <!-- El modal de editar-->
-                                <?php include("./modal/modal_editar.php"); ?>
+                                    <td style='display:none;'><?php echo $row['id'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['puesto'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['nombre'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['apellidos'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['oficina'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['telefono'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['extension'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['correo'] ?></td>
+                                    <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                            <i class='bi bi-pencil-square'></i></button>
+                                    <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio'><i class='bi bi-trash'></i></button>
+                                        <!-- El modal de editar-->
+                                        <?php include("./modal/modal_editar.php"); ?>
 
-                                <!-- El modal de Eliminar-->
-                                <?php include("./modal/modal_eliminar.php");
+                                        <!-- El modal de Eliminar-->
+                                        <?php include("./modal/modal_eliminar.php");
                                         ?>
-                        </tr>
+                                </tr>
 
                         <?php
                             }
@@ -87,7 +83,7 @@
             ?>
 
             <!-- El modal para insertar un nuevo contacto en el Directorio-->
-            <?php include ("../directorio/modal/modal_insertar.php") ?>
+            <?php include("../directorio/modal/modal_insertar.php") ?>
 
         </div>
 
