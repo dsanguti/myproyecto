@@ -31,3 +31,9 @@
 .edit-modal {
   background-color: transparent;
 }
+
+/* SE AÑADE Y SE QUITA LA CLASE  FILTRO AL BUSCAR EN DIRECTORIO */
+
+.filtro_directorio {
+  display: none;
+}
