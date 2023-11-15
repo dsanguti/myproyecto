@@ -1,3 +1,110 @@
+/*lOGIN*/
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+body {
+  font-family: Arial;
+
+  /* Ubicación de la imagen */
+
+  background-image: url(/myproyecto/img/fondo_login.jpg);
+
+  /* Para dejar la imagen de fondo centrada, vertical y
+
+horizontalmente */
+
+  background-position: center center;
+
+  /* Para que la imagen de fondo no se repita */
+
+  background-repeat: no-repeat;
+
+  /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+
+  background-attachment: fixed;
+
+  /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+
+  background-size: cover;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 400px;
+  height: 100vh;
+}
+.login-screen {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  box-shadow: 10px 10px 48px -4px rgba(0, 0, 0, 0.92);
+}
+
+.tittle-login {
+  text-align: center;
+  color: #777;
+}
+
+.login-form {
+  text-align: center;
+}
+.control-group {
+  margin-bottom: 10px;
+}
+
+input {
+  text-align: center;
+  background-color: #ecf0f1;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 10px 0;
+  width: 350px;
+  transition: border 0.5s;
+}
+
+input:focus {
+  border: 2px solid #3498db;
+  box-shadow: none;
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #3498db;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.login-link {
+  font-size: 12px;
+  color: #444;
+  display: block;
+  margin-top: 12px;
+}
+
 /* SECCIÓN DIRECTORIO */
 
 /* LOS ICONOS EDIT Y DEL DE LA TABLA DIRECTORIO*/

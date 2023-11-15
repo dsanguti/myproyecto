@@ -30,19 +30,6 @@ include('menuhorizontal.php');
 
 
 
-<script>
-    // document.addEventListener("DOMContentLoaded", function(e) {
-    //     e.preventDefault()
-
-
-    // })
-
-
-
-
-    // Se cierra el modal para quedarse en directorio
-</script>
-
 
 
 </body>
