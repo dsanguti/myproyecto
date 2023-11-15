@@ -44,7 +44,8 @@ horizontalmente */
   width: 400px;
   background-color: #fff;
   border-radius: 5px;
-  padding-bottom: 30px;
+  padding-top: 35px;
+  padding-bottom: 55px;
   box-shadow: 10px 10px 48px -4px rgba(0, 0, 0, 0.92);
 }
 
@@ -58,6 +59,14 @@ horizontalmente */
 }
 .control-group {
   margin-bottom: 10px;
+  position: relative;
+}
+.icon-login {
+  position: absolute;
+  width: 3.5rem;
+  top: 0.5rem;
+  font-size: x-large;
+  color: #0f6ba5;
 }
 
 input {

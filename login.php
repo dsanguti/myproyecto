@@ -21,13 +21,14 @@
 
             <div class="login-form">
                 <div class="control-group">
-
+                    <i class="bi bi-person icon-login"></i>
                     <input type="text" class="login-field" value="" placeholder="Introduzca Usuario" id="login-name">
 
                     <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
+                    <i class="bi bi-key icon-login"></i>
                     <input type="password" class="login-field" value="" placeholder="Introduzca clave" id="login-pass">
                     <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
