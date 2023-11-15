@@ -19,23 +19,23 @@
                 <h1>Login</h1>
             </div>
 
-            <div class="login-form">
+            <form class="login-form">
                 <div class="control-group">
                     <i class="bi bi-person icon-login"></i>
-                    <input type="text" class="login-field" value="" placeholder="Introduzca Usuario" id="login-name">
+                    <input type="text" class="login-field" placeholder="Introduzca Usuario" id="login-name" required>
 
                     <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
                     <i class="bi bi-key icon-login"></i>
-                    <input type="password" class="login-field" value="" placeholder="Introduzca clave" id="login-pass">
+                    <input type="password" class="login-field" value="" placeholder="Introduzca clave" id="login-pass"
+                        required>
                     <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
 
-                <a class="btn btn-primary btn-large btn-block" href="#">Entrar</a>
-
-            </div>
+                <button class="btn btn-primary" type="submit">Entrar</button>
+            </form>
         </div>
     </div>
 </body>

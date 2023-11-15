@@ -51,14 +51,15 @@ horizontalmente */
 
 .tittle-login {
   text-align: center;
-  color: #777;
+  color: #0f6ba5;
+  text-shadow: 5px 5px 5px #aaa;
 }
 
 .login-form {
   text-align: center;
 }
 .control-group {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
 }
 .icon-login {
