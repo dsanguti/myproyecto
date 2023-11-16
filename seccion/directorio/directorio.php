@@ -12,8 +12,7 @@
             </div>
             <div class="col mt-4">
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar en directorio"
-                        id="buscarDirectorio" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar en directorio" id="buscarDirectorio" aria-label="Search">
 
                 </form>
             </div>
@@ -46,38 +45,33 @@
                             $sql = 'SELECT * FROM directorio';
                             foreach ($db->query($sql) as $row) {
                         ?>
-                        <tr class="celda_tabla_directorio">
+                                <tr class="celda_tabla_directorio">
 
-                            <td style='display:none;'><?php echo $row['id'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['puesto'] ?>
-                            </td>
-                            <td style='text-align:center;'><?php echo $row['nombre'] ?>
-                            </td>
-                            <td style='text-align:center;'>
-                                <?php echo $row['apellidos'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['oficina'] ?>
-                            </td>
-                            <td style='text-align:center;'><?php echo $row['telefono'] ?>
-                            </td>
-                            <td style='text-align:center;'>
-                                <?php echo $row['extension'] ?></td>
-                            <td style='text-align:center;'><?php echo $row['correo'] ?>
-                            </td>
-                            <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table'
-                                    data-bs-toggle='modal'
-                                    data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
-                                    <i class='bi bi-pencil-square'></i></button>
-                            <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table'
-                                    data-bs-toggle='modal'
-                                    data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
-                                        class='bi bi-trash'></i></button>
-                                <!-- El modal de editar-->
-                                <?php include("./modal/modal_editar.php"); ?>
+                                    <td style='display:none;'><?php echo $row['id'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['puesto'] ?>
+                                    </td>
+                                    <td style='text-align:center;'><?php echo $row['nombre'] ?>
+                                    </td>
+                                    <td style='text-align:center;'>
+                                        <?php echo $row['apellidos'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['oficina'] ?>
+                                    </td>
+                                    <td style='text-align:center;'><?php echo $row['telefono'] ?>
+                                    </td>
+                                    <td style='text-align:center;'>
+                                        <?php echo $row['extension'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['correo'] ?>
+                                    </td>
+                                    <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                            <i class='bi bi-pencil-square'></i></button>
+                                    <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i class='bi bi-trash'></i></button>
+                                        <!-- El modal de editar-->
+                                        <?php include("./modal/modal_editar.php"); ?>
 
-                                <!-- El modal de Eliminar-->
-                                <?php include("./modal/modal_eliminar.php");
+                                        <!-- El modal de Eliminar-->
+                                        <?php include("./modal/modal_eliminar.php");
                                         ?>
-                        </tr>
+                                </tr>
 
                         <?php
                             }
