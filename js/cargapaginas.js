@@ -53,12 +53,6 @@ function Carga_Inventario() {
   xhttp.send();
 }
 
-// Carga con retraso de Directorio
-
-function Carga_DirectorioR() {
-  setTimeout(Carga_Directorio, 3000);
-}
-
 // Se carga la sección de demandas
 
 function Carga_Demandas() {

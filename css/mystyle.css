@@ -160,8 +160,12 @@ horizontalmente */
 }
 
 /*MODALES DE DIRECTORIO*/
-.modal-header-add-edit {
+.modal-header-add {
   background-color: #0f6ba5;
+  color: #fff;
+}
+.modal-header-edit {
+  background-color: rgb(22, 115, 71);
   color: #fff;
 }
 

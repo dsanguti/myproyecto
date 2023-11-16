@@ -7,7 +7,7 @@
                 aria-labelledby="modal-edit-directorio" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header modal-header-add-edit">
+                        <div class="modal-header modal-header-edit">
                             <h5 class="modal-title" id="exampleModalLabel">Editar Persona</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -75,11 +75,11 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
+                                        <button type="button" class="btn btn-success"
                                             data-bs-dismiss="modal">Cerrar</button>
                                         <!-- <button type="button" name="edit" id="btn-edit-guardar"
                                             onclick="Carga_Directorio()" class="btn btn-primary">-->
-                                        <button type="submit" name="edit" id="btn-edit-guardar" class="btn btn-primary">
+                                        <button type="submit" name="edit" id="btn-edit-guardar" class="btn btn-success">
                                             <i class="bi bi-pencil-square"></i> Actualizar</button>
                                     </div>
 
