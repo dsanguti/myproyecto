@@ -158,3 +158,14 @@ horizontalmente */
 .filtro_directorio {
   display: none;
 }
+
+/*MODALES DE DIRECTORIO*/
+.modal-header-add-edit {
+  background-color: #0f6ba5;
+  color: #fff;
+}
+
+.modal-header-delete {
+  background-color: #bb2d3b;
+  color: #fff;
+}
