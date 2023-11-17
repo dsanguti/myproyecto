@@ -41,12 +41,12 @@
                         <tbody>
                             <!-- Se realiza la conexión con la basde de datos Directorio -->
                             <?php include_once('../../bd/directorio/conector_BD_directorio.php');
-                        $database = new ConectarBD();
-                        $db = $database->abrir();
-                        try {
-                            $sql = 'SELECT * FROM directorio';
-                            foreach ($db->query($sql) as $row) {
-                        ?>
+                            $database = new ConectarBD();
+                            $db = $database->abrir();
+                            try {
+                                $sql = 'SELECT * FROM directorio';
+                                foreach ($db->query($sql) as $row) {
+                            ?>
                             <tr class="celda_tabla_directorio">
 
                                 <td style='display:none;'><?php echo $row['id'] ?></td>
@@ -77,16 +77,16 @@
 
                                     <!-- El modal de Eliminar-->
                                     <?php include("./modal/modal_eliminar.php");
-                                        ?>
+                                            ?>
                             </tr>
 
                             <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo 'Error con la conexión: ' . $e->getMessage();
                             }
-                        } catch (PDOException $e) {
-                            echo 'Error con la conexión: ' . $e->getMessage();
-                        }
-                        $database->cerrar();
-                        ?>
+                            $database->cerrar();
+                            ?>
 
                         </tbody>
                     </table>
@@ -94,13 +94,13 @@
                 </div>
                 <!-- El modal de editar-->
                 <?php
-            include("../directorio/modal/modal_editar.php");
-            ?>
+                include("../directorio/modal/modal_editar.php");
+                ?>
 
                 <!-- El modal de Eliminar-->
                 <?php
-            include("../directorio/modal/modal_eliminar.php");
-            ?>
+                include("../directorio/modal/modal_eliminar.php");
+                ?>
 
                 <!-- El modal para insertar un nuevo contacto en el Directorio-->
                 <?php include("../directorio/modal/modal_insertar.php") ?>
@@ -112,7 +112,7 @@
 
     </div>
 
-
+    >
     <!--<td style='text-align:center;'>   <button class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio'> <i class='bi bi-pencil-square'></i></button>
                             <td style='text-align:center;'>   <button class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio'><i class='bi bi-trash'></i></button>-->
 
