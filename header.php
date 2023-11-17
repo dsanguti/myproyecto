@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (empty($_SESSION["id"])) {
+
+    header("location: http://localhost/myproyecto/login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
