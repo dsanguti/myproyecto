@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <div class="container">
     <div class="row">
         <div class="col mt-4">
@@ -10,31 +7,18 @@ session_start();
     <div class="row">
         <div class="container">
             <div class="row mb-2 flex-row d-flex justify-content-between">
-                <?php
-                if ($_SESSION["directorio"] === "editar") {
-                ?>
                 <div class="col mt-4">
                     <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
                         Nuevo</a>
                 </div>
-                <?php
-                }
-                ?>
-
-
-                <div class="col mt-4 d-flex justify-content-end">
-                    <form role="search">
-                        <input style="max-width:450px;" class="form-control me-2" type="search"
-                            placeholder="Buscar en directorio" id="buscarDirectorio" aria-label="Search">
+                <div class="col mt-4">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar en directorio"
+                            id="buscarDirectorio" aria-label="Search">
 
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-
             <div class="row">
                 <div class="col">
 
@@ -50,18 +34,8 @@ session_start();
                                 <th style="text-align:center;" scope="col">Teléfono</th>
                                 <th style="text-align:center;" scope="col">Extensión</th>
                                 <th style="text-align:center;" scope="col">Correo</th>
-
-                                <?php
-                                if ($_SESSION["directorio"] === "editar") {
-                                ?>
                                 <th style="text-align:center;color:orange;" scope="col">Edit</th>
                                 <th style="text-align:center;color:red;" scope="col">Del</th>
-                                <?php
-                                }
-                                ?>
-
-
-
                             </tr>
                         </thead>
                         <tbody>
@@ -90,10 +64,7 @@ session_start();
                                     <?php echo $row['extension'] ?></td>
                                 <td style='text-align:center;'><?php echo $row['correo'] ?>
                                 </td>
-                                <?php
 
-                                        if ($_SESSION["directorio"] === "editar") {
-                                        ?>
                                 <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table'
                                         data-bs-toggle='modal'
                                         data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
@@ -107,12 +78,7 @@ session_start();
 
                                     <!-- El modal de Eliminar-->
                                     <?php include("./modal/modal_eliminar.php");
-                                                ?>
-
-                                    <?php
-                                        }
                                             ?>
-
                             </tr>
 
                             <?php
@@ -138,17 +104,16 @@ session_start();
                 ?>
 
                 <!-- El modal para insertar un nuevo contacto en el Directorio-->
-                <?php include("../directorio/modal/modal_insertar.php"); ?>
+                <?php include("../directorio/modal/modal_insertar.php") ?>
 
             </div>
 
 
         </div>
 
-
     </div>
 
-
+    >
     <!--<td style='text-align:center;'>   <button class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio'> <i class='bi bi-pencil-square'></i></button>
                             <td style='text-align:center;'>   <button class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio'><i class='bi bi-trash'></i></button>-->
 

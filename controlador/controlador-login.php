@@ -14,6 +14,9 @@ if (!empty($_POST["btnlogin"])) {
             $_SESSION["nombre"] = $datos->nombre;
             $_SESSION["apellido"] = $datos->apellido;
             $_SESSION["perfil"] = $datos->perfil;
+            $_SESSION["directorio"] = $datos->directorio;
+            $_SESSION["inventario"] = $datos->inventario;
+
             header("location: http://localhost/myproyecto/");
         } else {
             echo "<div class='alert alert-danger login-alert'>Usuario y/o contraseña incorrectos</div>";
