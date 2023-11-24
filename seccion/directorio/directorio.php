@@ -13,10 +13,10 @@ session_start();
                 <?php
                 if ($_SESSION["directorio"] === "editar") {
                 ?>
-                <div class="col mt-4">
-                    <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
-                        Nuevo</a>
-                </div>
+                    <div class="col mt-4">
+                        <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
+                            Nuevo</a>
+                    </div>
                 <?php
                 }
                 ?>
@@ -24,8 +24,7 @@ session_start();
 
                 <div class="col mt-4 d-flex justify-content-end">
                     <form role="search">
-                        <input style="max-width:450px;" class="form-control me-2" type="search"
-                            placeholder="Buscar en directorio" id="buscarDirectorio" aria-label="Search">
+                        <input style="max-width:450px;" class="form-control me-2" type="search" placeholder="Buscar en directorio" id="buscarDirectorio" aria-label="Search">
 
                     </form>
                 </div>
@@ -54,8 +53,8 @@ session_start();
                                 <?php
                                 if ($_SESSION["directorio"] === "editar") {
                                 ?>
-                                <th style="text-align:center;color:orange;" scope="col">Edit</th>
-                                <th style="text-align:center;color:red;" scope="col">Del</th>
+                                    <th style="text-align:center;color:orange;" scope="col">Edit</th>
+                                    <th style="text-align:center;color:red;" scope="col">Del</th>
                                 <?php
                                 }
                                 ?>
@@ -71,49 +70,54 @@ session_start();
                             $db = $database->abrir();
                             try {
                                 $sql = 'SELECT * FROM directorio';
+
+                                //Para la paginación
+                                $pers_x_pagina = 3;
+                                $sql_total_rows = $db->prepare($sql);
+                                $sql_total_rows->execute();
+                                $sql_count_rows = $sql_total_rows->rowCount();
+                                echo $sql_count_rows;
+                                $total_pers_directorio = $db->query($sql);
+
+                                //Para poner cada campo en su fila desde BD
                                 foreach ($db->query($sql) as $row) {
                             ?>
-                            <tr class="celda_tabla_directorio">
+                                    <tr class="celda_tabla_directorio">
 
-                                <td style='display:none;'><?php echo $row['id'] ?></td>
-                                <td style='text-align:center;'><?php echo $row['puesto'] ?>
-                                </td>
-                                <td style='text-align:center;'><?php echo $row['nombre'] ?>
-                                </td>
-                                <td style='text-align:center;'>
-                                    <?php echo $row['apellidos'] ?></td>
-                                <td style='text-align:center;'><?php echo $row['oficina'] ?>
-                                </td>
-                                <td style='text-align:center;'><?php echo $row['telefono'] ?>
-                                </td>
-                                <td style='text-align:center;'>
-                                    <?php echo $row['extension'] ?></td>
-                                <td style='text-align:center;'><?php echo $row['correo'] ?>
-                                </td>
-                                <?php
+                                        <td style='display:none;'><?php echo $row['id'] ?></td>
+                                        <td style='text-align:center;'><?php echo $row['puesto'] ?>
+                                        </td>
+                                        <td style='text-align:center;'><?php echo $row['nombre'] ?>
+                                        </td>
+                                        <td style='text-align:center;'>
+                                            <?php echo $row['apellidos'] ?></td>
+                                        <td style='text-align:center;'><?php echo $row['oficina'] ?>
+                                        </td>
+                                        <td style='text-align:center;'><?php echo $row['telefono'] ?>
+                                        </td>
+                                        <td style='text-align:center;'>
+                                            <?php echo $row['extension'] ?></td>
+                                        <td style='text-align:center;'><?php echo $row['correo'] ?>
+                                        </td>
+                                        <?php
 
                                         if ($_SESSION["directorio"] === "editar") {
                                         ?>
-                                <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table'
-                                        data-bs-toggle='modal'
-                                        data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
-                                        <i class='bi bi-pencil-square'></i></button>
-                                <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table'
-                                        data-bs-toggle='modal'
-                                        data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
-                                            class='bi bi-trash'></i></button>
-                                    <!-- El modal de editar-->
-                                    <?php include("./modal/modal_editar.php"); ?>
+                                            <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                                    <i class='bi bi-pencil-square'></i></button>
+                                            <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i class='bi bi-trash'></i></button>
+                                                <!-- El modal de editar-->
+                                                <?php include("./modal/modal_editar.php"); ?>
 
-                                    <!-- El modal de Eliminar-->
-                                    <?php include("./modal/modal_eliminar.php");
+                                                <!-- El modal de Eliminar-->
+                                                <?php include("./modal/modal_eliminar.php");
                                                 ?>
 
-                                    <?php
+                                            <?php
                                         }
                                             ?>
 
-                            </tr>
+                                    </tr>
 
                             <?php
                                 }
@@ -122,10 +126,20 @@ session_start();
                             }
                             $database->cerrar();
                             ?>
-
                         </tbody>
+
                     </table>
 
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+
+                            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <!-- El modal de editar-->
                 <?php
