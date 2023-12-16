@@ -37,146 +37,124 @@ session_start();
 
             <div class="row">
                 <div class="col">
+                    <!-- Se realiza la conexión con la basde de datos Directorio -->
+                    <?php include_once('../../bd/directorio/conector_BD_directorio.php'); ?>
 
 
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th style="display:none;" scope="col">id</th>
-                                <th style="text-align:center;" scope="col">Puesto</th>
-                                <th style="text-align:center;" scope="col">Nombre</th>
-                                <th style="text-align:center;" scope="col">Apellidos</th>
-                                <th style="text-align:center;" scope="col">Oficina</th>
-                                <th style="text-align:center;" scope="col">Teléfono</th>
-                                <th style="text-align:center;" scope="col">Extensión</th>
-                                <th style="text-align:center;" scope="col">Correo</th>
+                    <div id="tabla_directorio">
 
-                                <?php
-                                if ($_SESSION["directorio"] === "editar") {
-                                ?>
-                                <th style="text-align:center;color:orange;" scope="col">Edit</th>
-                                <th style="text-align:center;color:red;" scope="col">Del</th>
-                                <?php
-                                }
-                                ?>
+                        <?php include_once('../../bd/directorio/conector_BD_directorio.php');
 
+                        //Obtener el número total de registros y calcular el número total de páginas,cálculos para la paginación de la tabla directorio
+                        $result = $conn->query("SELECT COUNT(*) as total FROM directorio");
+                        $row = $result->fetch_assoc();
+                        $total_registros = $row['total'];
+                        $registros_por_pagina = 4;
+                        $total_paginas = ceil($total_registros / $registros_por_pagina);
 
+                        $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+                        $offset = ($pagina - 1) * $registros_por_pagina;
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Se realiza la conexión con la basde de datos Directorio -->
-                            <?php include_once('../../bd/directorio/conector_BD_directorio.php');
+                        $query = "SELECT * FROM directorio LIMIT $offset, $registros_por_pagina";
+                        $result = $conn->query($query);
+                        ?>
 
-                            try {
+                        <table class="table table-striped table-hover">
+                            <!-- Las cabeceras de la tabla directorio-->
+                            <thead>
+                                <tr>
+                                    <th style="display:none;" scope="col">id</th>
+                                    <th style="text-align:center;" scope="col">Puesto</th>
+                                    <th style="text-align:center;" scope="col">Nombre</th>
+                                    <th style="text-align:center;" scope="col">Apellidos</th>
+                                    <th style="text-align:center;" scope="col">Oficina</th>
+                                    <th style="text-align:center;" scope="col">Teléfono</th>
+                                    <th style="text-align:center;" scope="col">Extensión</th>
+                                    <th style="text-align:center;" scope="col">Correo</th>
 
-                                //Llama a todas las personas del directorio
-                                $sql = 'SELECT * FROM directorio';
-                                $sentencia = $pdo->prepare($sql);
-                                $sentencia->execute();
+                                    <?php
+                                    if ($_SESSION["directorio"] === "editar") {
+                                    ?>
+                                    <th style="text-align:center;color:orange;" scope="col">Edit</th>
+                                    <th style="text-align:center;color:red;" scope="col">Del</th>
+                                    <?php
+                                    }
+                                    ?>
 
-                                $resultado = $sentencia->fetchAll();
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php while ($row = $result->fetch_assoc()) : ?>
+                                <tr class="celda_tabla_directorio">
 
-                                //Para la paginación
-                                $pers_x_pagina = 2;
-                                $sql_total_rows = $sentencia->rowCount();
-                                $paginas = $sql_total_rows / $pers_x_pagina;
-                                $paginas = ceil($paginas);
-
-                                //Obtener número de página actual
-                                $pagina_actual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
-                                $pagina_actual = ($pagina_actual > 0 && $pagina_actual <= $paginas) ? $pagina_actual : 1;
-                                $offset = ($pagina_actual - 1) * $pers_x_pagina;
-
-                                //Consulta SQL con limitación de resultados según la página actual
-                                //$sql2 = "SELECT * FROM directorio LIMIT $offset, $pers_x_pagina";
-
-                                $sql2 = "SELECT * FROM directorio LIMIT :offset, :pers_x_pagina";
-                                $sql_personas = $pdo->prepare($sql2);
-                                $sql_personas->bindParam(':offset', $offset, PDO::PARAM_INT);
-                                $sql_personas->bindParam(':pers_x_pagina', $pers_x_pagina, PDO::PARAM_INT);
-                                $sql_personas->execute();
-                                $sql_personas = $sql_personas->fetchAll();
-
-                                //Para poner cada campo en su fila desde BD
-                                foreach ($sql_personas as $row) {
-                            ?>
-                            <tr class="celda_tabla_directorio">
-
-                                <td style='display:none;'><?php echo $row['id'] ?></td>
-                                <td style='text-align:center;'><?php echo $row['puesto'] ?>
-                                </td>
-                                <td style='text-align:center;'><?php echo $row['nombre'] ?>
-                                </td>
-                                <td style='text-align:center;'>
-                                    <?php echo $row['apellidos'] ?></td>
-                                <td style='text-align:center;'><?php echo $row['oficina'] ?>
-                                </td>
-                                <td style='text-align:center;'><?php echo $row['telefono'] ?>
-                                </td>
-                                <td style='text-align:center;'>
-                                    <?php echo $row['extension'] ?></td>
-                                <td style='text-align:center;'><?php echo $row['correo'] ?>
-                                </td>
-                                <?php
+                                    <td style='display:none;'><?php echo $row['id'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['puesto'] ?>
+                                    </td>
+                                    <td style='text-align:center;'><?php echo $row['nombre'] ?>
+                                    </td>
+                                    <td style='text-align:center;'>
+                                        <?php echo $row['apellidos'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['oficina'] ?>
+                                    </td>
+                                    <td style='text-align:center;'><?php echo $row['telefono'] ?>
+                                    </td>
+                                    <td style='text-align:center;'>
+                                        <?php echo $row['extension'] ?></td>
+                                    <td style='text-align:center;'><?php echo $row['correo'] ?>
+                                    </td>
+                                    <?php
 
                                         if ($_SESSION["directorio"] === "editar") {
                                         ?>
-                                <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table'
-                                        data-bs-toggle='modal'
-                                        data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
-                                        <i class='bi bi-pencil-square'></i></button>
-                                <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table'
-                                        data-bs-toggle='modal'
-                                        data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
-                                            class='bi bi-trash'></i></button>
-                                    <!-- El modal de editar-->
-                                    <?php include("./modal/modal_editar.php"); ?>
+                                    <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table'
+                                            data-bs-toggle='modal'
+                                            data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                            <i class='bi bi-pencil-square'></i></button>
+                                    <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table'
+                                            data-bs-toggle='modal'
+                                            data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
+                                                class='bi bi-trash'></i></button>
+                                        <!-- El modal de editar-->
+                                        <?php include("./modal/modal_editar.php"); ?>
 
-                                    <!-- El modal de Eliminar-->
-                                    <?php include("./modal/modal_eliminar.php");
+                                        <!-- El modal de Eliminar-->
+                                        <?php include("./modal/modal_eliminar.php");
                                                 ?>
 
-                                    <?php
+                                        <?php
                                         }
                                             ?>
 
-                            </tr>
+                                </tr>
 
-                            <?php
-                                }
-                            } catch (PDOException $e) {
-                                echo 'Error con la conexión: ' . $e->getMessage();
-                            }
+                                <?php endwhile; ?>
 
-                            ?>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        </tbody>
 
-                    </table>
 
                     <!--PAGINACIÓN DE LA TABLA-->
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <li class="page-item <?php echo $pagina_actual <= 1 ? 'disabled' : '' ?>">
-                                <a class="page-link"
-                                    href="#/directorio?pagina=<?php echo $pagina_actual . "-" . 1 ?>">Anterior</a>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination" id="pagination-directorio">
+                            <li class="page-item <?php echo ($pagina <= 1) ? 'disabled' : ''; ?>">
+                                <a class="page-link" data-page="<?php echo ($pagina - 1) ?>"
+                                    href="#/directorio?pagina=<?php echo ($pagina - 1); ?>">Anterior</a>
                             </li>
 
-                            <?php for ($i = 0; $i < $paginas; $i++) : ?>
-                            <li class="page-item <?php echo $pagina_actual == $i + 1 ? 'active' : '' ?>">
-                                <a class="page-link"
-                                    href="#/directorio?pagina=<?php echo $i + 1 ?>"><?php echo $i + 1 ?></a>
+                            <?php for ($i = 1; $i <= $total_paginas; $i++) : ?>
+                            <li class="page-item <?php echo ($pagina == $i) ? 'active' : ''; ?>">
+                                <a class="page-link" data-page="<?php echo $i ?>"
+                                    href="#/directorio?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
                             </li>
-                            <?php endfor ?>
+                            <?php endfor; ?>
 
-                            <li class="page-item <?php echo $pagina_actual >= $paginas ? 'disabled' : '' ?>">
-                                <a class="page-link"
-                                    href="#/directorio?pagina=<?php echo $pagina_actual + 1 ?>">Siguiente</a>
+                            <li class="page-item <?php echo ($pagina >= $total_paginas) ? 'disabled' : ''; ?>">
+                                <a class="page-link" data-page="<?php echo ($pagina + 1) ?>"
+                                    href="#/directorio?pagina=<?php echo ($pagina + 1); ?>">Siguiente</a>
                             </li>
                         </ul>
-
-
                     </nav>
                 </div>
                 <!-- El modal de editar-->

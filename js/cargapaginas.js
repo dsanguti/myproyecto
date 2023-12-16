@@ -13,21 +13,6 @@ function Carga_Inicio() {
   xhttp.send();
 }
 
-// // Se carga la sección del Directorio
-
-// function Carga_Directorio(){
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       document.getElementById("main").innerHTML =
-//       this.responseText;
-//     }
-//   };
-//   xhttp.open("GET", "seccion/directorio/directorio.php", true);
-//   xhttp.send();
-
-// }
-
 // Se carga la sección del Directorio teniendo en cuenta la carga posterior de modal
 function Carga_Directorio() {
   var xhttp = new XMLHttpRequest();
@@ -38,6 +23,74 @@ function Carga_Directorio() {
   };
   xhttp.open("GET", "/myproyecto/seccion/directorio/directorio.php", true);
   xhttp.send();
+}
+
+// Se carga la paginación de la tabla directorio
+document.addEventListener("DOMContentLoaded", function () {
+  // Inicializar la página al cargar
+  cargarTabla(1);
+
+  const paginationElement = document.getElementById("pagination-directorio");
+  if (paginationElement) {
+    // Manejar el clic en los botones de paginación
+    document
+      .getElementById("pagination-directorio")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        if (event.target.tagName === "a") {
+          const pagina = event.target.dataset.page;
+          cargarTabla(pagina);
+        }
+      });
+  } else {
+    console.error("no existe el elmento");
+  }
+});
+
+function cargarTabla(pagina) {
+  const tablaContainer = document.getElementById("tabla_directorio");
+
+  // Realizar una solicitud AJAX
+  const xhr = new XMLHttpRequest();
+  xhr.open(
+    "GET",
+    "/myproyecto/seccion/directorio/carga_tabla_directorio.php?pagina=" +
+      pagina,
+    true
+  );
+
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      // Actualizar el contenido de la tabla y la paginación
+      tablaContainer.innerHTML = xhr.responseText;
+
+      actualizarPaginacion(pagina);
+    }
+  };
+
+  xhr.send();
+}
+
+function actualizarPaginacion(paginaActual) {
+  const paginationContainer = document.getElementById("pagination-directorio");
+
+  // Realizar una solicitud AJAX para obtener la paginación actualizada
+  const xhr = new XMLHttpRequest();
+  xhr.open(
+    "GET",
+    "/myproyecto/seccion/directorio/paginacion_tabla_directorio.php?pagina=" +
+      paginaActual,
+    true
+  );
+
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      // Actualizar el contenido de la paginación
+      paginationContainer.innerHTML = xhr.responseText;
+    }
+  };
+
+  xhr.send();
 }
 
 // Se carga la sección de Inventario
