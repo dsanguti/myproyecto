@@ -129,6 +129,14 @@ input[type="search"]::-webkit-search-clear-button {
   appearance: none;
   display: none;
 }
+
+/*SE PONE LA EL ICON X DENTRO DEL INPUT*/
+.input-container-search {
+  position: relative;
+}
+.input-dir-search {
+  padding-right: 15px;
+}
 /* SE AÑADE Y SE QUITA LA CLASE  FILTRO AL BUSCAR EN DIRECTORIO */
 
 .filtro_directorio {
@@ -137,6 +145,9 @@ input[type="search"]::-webkit-search-clear-button {
 
 /*ICON X PARA LIMPIAR BÚSQUEDA*/
 .clear-search-dir {
+  position: absolute;
+  top: 14%;
+  right: 7px;
   color: #0f6ba5;
   font-size: larger;
   font-weight: bold;
