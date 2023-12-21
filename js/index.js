@@ -20,8 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
 // Función Buscar en el directorio
 
 document.addEventListener("keyup", (e) => {
+  const iconXdir = document.getElementById("xSearchDir");
+  const buscarDirectorio = document.getElementById("buscarDirectorio");
+
+  if (e.value !== "") {
+    iconXdir.classList.remove("icon-clear-dir");
+  }
+
+  if (buscarDirectorio.value.trim() === "") {
+    iconXdir.classList.add("icon-clear-dir");
+  }
+
   if (e.target.matches("#buscarDirectorio")) {
-    if (e.key === "Escape") e.target.value = "";
+    if (e.key === "Escape") {
+      e.target.value = "";
+      iconXdir.classList.add("icon-clear-dir");
+    }
 
     document.querySelectorAll(".celda_tabla_directorio").forEach((celda) => {
       celda.textContent
@@ -32,3 +46,20 @@ document.addEventListener("keyup", (e) => {
     });
   }
 });
+
+//Cerrar iconX BuscarDirectorio
+
+function CerrarIconDirBuscar() {
+  const iconXdir = document.getElementById("xSearchDir");
+  const buscarDirectorio = document.getElementById("buscarDirectorio");
+
+  iconXdir.classList.add("icon-clear-dir");
+  buscarDirectorio.value = "";
+  document.querySelectorAll(".celda_tabla_directorio").forEach((celda) => {
+    celda.textContent
+      .toLocaleLowerCase()
+      .includes(buscarDirectorio.value.toLocaleLowerCase())
+      ? celda.classList.remove("filtro_directorio")
+      : celda.classList.add("filtro_directorio");
+  });
+}

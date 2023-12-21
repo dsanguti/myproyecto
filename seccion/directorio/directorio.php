@@ -23,7 +23,8 @@ session_start();
 
 
                 <div class="col mt-4 d-flex justify-content-end">
-                    <form role="search">
+                    <form class="d-flex flex-row" role="search">
+                        <i id="xSearchDir" class="bi bi-x-circle clear-search-dir icon-clear-dir" style="padding-right: 7px;" onclick="CerrarIconDirBuscar()"></i>
                         <input style="max-width:450px;" class="form-control me-2" type="search" placeholder="Buscar en directorio" id="buscarDirectorio" aria-label="Search">
 
                     </form>

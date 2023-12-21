@@ -135,6 +135,21 @@ input[type="search"]::-webkit-search-clear-button {
   display: none;
 }
 
+/*ICON X PARA LIMPIAR BÚSQUEDA*/
+.clear-search-dir {
+  color: #0f6ba5;
+  font-size: larger;
+  font-weight: bold;
+  transition-duration: 0.7s;
+}
+.clear-search-dir:hover {
+  -webkit-text-stroke: 1px;
+  color: red;
+}
+.icon-clear-dir {
+  display: none;
+}
+
 /* LA TABLA DIRECTORIO*/
 
 .table-fixed {
