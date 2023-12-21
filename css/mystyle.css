@@ -121,6 +121,13 @@ horizontalmente */
 
 /* SECCIÓN DIRECTORIO */
 
+/* LA TABLA DIRECTORIO*/
+
+.table-fixed {
+  overflow-y: scroll;
+  max-height: 400px;
+}
+
 /* LOS ICONOS EDIT Y DEL DE LA TABLA DIRECTORIO*/
 
 .edit-table {
