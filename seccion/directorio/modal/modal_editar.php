@@ -20,7 +20,7 @@
 
                                         <label for="puestoDirectorio" class="form-label">Puesto</label>
                                         <input style="text-align: center;" type="text" class="form-control"
-                                            name="puestoDirectorio" value="<?php echo $row['puesto']; ?>">
+                                            name="puestoDirectorio" value="<?php echo $row['puesto']; ?>" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center g-3">
@@ -31,12 +31,13 @@
                                             aria-label="id_directorio">
                                         <label for="nombreDirectorio" class="form-label">Nombre</label>
                                         <input style="text-align: center;" type="text" class="form-control"
-                                            name="nombreDirectorio" value="<?php echo $row['nombre']; ?>">
+                                            name="nombreDirectorio" value="<?php echo $row['nombre']; ?>" required>
                                     </div>
                                     <div class="col-9 col-sm-5 mb-3">
                                         <label for="apellidos_directorio" class="form-label">Apellidos</label>
                                         <input style="text-align: center;" type="text" class="form-control"
-                                            name="apellidos_directorio" value="<?php echo $row['apellidos']; ?>">
+                                            name="apellidos_directorio" value="<?php echo $row['apellidos']; ?>"
+                                            required>
                                     </div>
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3 mb-3">
@@ -44,12 +45,12 @@
                                             <input style="text-align: center;" type="email" class="form-control"
                                                 name="correo_directorio" id="edit-correo_directorio"
                                                 aria-describedby="correo_directorio"
-                                                value="<?php echo $row['correo']; ?>">
+                                                value="<?php echo $row['correo']; ?>" required>
                                         </div>
                                         <div class="col-9 col-sm-5 mb-3 mb-3">
                                             <label for="oficina_directorio" class="form-label">Oficina</label>
                                             <select name="oficina_directorio" id="edit-oficina_directorio"
-                                                class="form-select">
+                                                class="form-select" required>
                                                 <option><?php echo $row['oficina']; ?></option>
                                                 <option>Empleo</option>
                                                 <option>Prestaciones</option>
@@ -63,15 +64,15 @@
                                             <label for="telefono_directorio" class="form-label">Teléfono</label>
                                             <input style="text-align: center;" type="text" name="telefono_directorio"
                                                 class="form-control" id="edit-telefono_directorio"
-                                                aria-label="telefono_directorio"
-                                                value="<?php echo $row['telefono']; ?>">
+                                                aria-label="telefono_directorio" value="<?php echo $row['telefono']; ?>"
+                                                required>
                                         </div>
                                         <div class="col-9 col-sm-5 mb-3">
                                             <label for="extension_directorio" class="form-label">Extensión</label>
                                             <input style="text-align: center;" type="text" name="extension_directorio"
                                                 class="form-control" id="edit-extension_directorio"
                                                 aria-label="extension_directorio"
-                                                value="<?php echo $row['extension']; ?>">
+                                                value="<?php echo $row['extension']; ?>" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
