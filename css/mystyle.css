@@ -121,6 +121,20 @@ horizontalmente */
 
 /* SECCIÓN DIRECTORIO */
 
+/* INPUT DE BUSQUEDA DEL DIRECTORIO*/
+/* QUE DESAPAREZCA LA X EN EL IMPUT*/
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-clear-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+/* SE AÑADE Y SE QUITA LA CLASE  FILTRO AL BUSCAR EN DIRECTORIO */
+
+.filtro_directorio {
+  display: none;
+}
+
 /* LA TABLA DIRECTORIO*/
 
 .table-fixed {
@@ -158,12 +172,6 @@ horizontalmente */
 
 .edit-modal {
   background-color: transparent;
-}
-
-/* SE AÑADE Y SE QUITA LA CLASE  FILTRO AL BUSCAR EN DIRECTORIO */
-
-.filtro_directorio {
-  display: none;
 }
 
 /*MODALES DE DIRECTORIO*/
