@@ -124,7 +124,7 @@ horizontalmente */
 /* ICONO PDF*/
 
 #icon-pdf-dir {
-  margin-left: 15px;
+  /*margin-left: 15px;*/
   font-size: 25px;
   color: red;
   transition-duration: 0.3s;

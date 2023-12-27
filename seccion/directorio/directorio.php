@@ -10,7 +10,7 @@ session_start();
     <div class="row">
         <div class="container">
             <div class="row mb-2 flex-row d-flex justify-content-between">
-                <div class="col d-flex justify-content-start">
+                <div class="col-6 d-flex">
                     <?php
                     if ($_SESSION["directorio"] === "editar") {
                     ?>
@@ -18,7 +18,7 @@ session_start();
                         <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i
                                 class="bi bi-plus"></i>
                             Nuevo</a>
-                        <a role="button"> <i id="icon-pdf-dir" class="bi bi-file-earmark-pdf-fill"></i></a>
+
                     </div>
                     <?php
                     }
@@ -26,7 +26,7 @@ session_start();
 
                 </div>
 
-                <div class="col d-flex justify-content-end">
+                <div class="col-6 d-flex justify-content-end">
                     <form class="d-flex flex-row" role="search">
                         <div class="input-container-search">
                             <input style="max-width:450px;" class="form-control me-2 input-dir-search" type="search"
@@ -166,7 +166,12 @@ session_start();
 
 
     </div>
+    <div class="row">
+        <div class="col mt-3">
+            <a class="col" role="button"> <i id="icon-pdf-dir" class="bi bi-file-earmark-pdf-fill"></i></a>
 
+        </div>
+    </div>
 
     <!--<td style='text-align:center;'>   <button class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio'> <i class='bi bi-pencil-square'></i></button>
                             <td style='text-align:center;'>   <button class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio'><i class='bi bi-trash'></i></button>-->
