@@ -226,3 +226,32 @@ input[type="search"]::-webkit-search-clear-button {
   background-color: #bb2d3b;
   color: #fff;
 }
+
+/* MI Clase para tooltip*/
+.mytooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.mytooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 225px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1;
+  bottom: 40px;
+  left: 100px;
+  transform: translateX(-50%);
+}
+
+.mytooltip:hover::before {
+  visibility: visible;
+  opacity: 1;
+}

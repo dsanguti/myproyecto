@@ -18,6 +18,7 @@ include('menuhorizontal.php');
 
 
 <!--JS requerido de bootstrap-->
+
 <script type="text/javascript" src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
