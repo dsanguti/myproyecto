@@ -55,7 +55,7 @@ session_start();
 
                         //Obtener el número total de registros 
                         $result = $conn->query("SELECT * FROM directorio");
-                        $row = $result->fetch_assoc();
+
 
                         ?>
 
