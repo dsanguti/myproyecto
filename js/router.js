@@ -8,5 +8,7 @@ const Router = () => {
     Carga_Directorio();
   } else if (hash == "#/inventario") {
     Carga_Inventario();
+  } else if (hash == "#/panelcontrol") {
+    Carga_Panel_Control();
   }
 };

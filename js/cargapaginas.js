@@ -25,6 +25,18 @@ function Carga_Directorio() {
   xhttp.send();
 }
 
+// Se carga la sección del Panel de Control
+function Carga_Panel_Control() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("main").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/myproyecto/seccion/panelcontrol/panelcontrol.php", true);
+  xhttp.send();
+}
+
 // Se carga la sección de Inventario
 
 function Carga_Inventario() {

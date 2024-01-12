@@ -9,7 +9,7 @@
                     <?php
                     $miSesion = $_SESSION["perfil"];
                     if ($miSesion === "admin") {
-                        echo "<a class='navbar-brand' style='color:#E29930;' href='#/'>Panel Control</a>";
+                        echo "<a class='navbar-brand' style='color:#E29930;' href='#/panelcontrol'>Panel Control</a>";
                     }
                     ?>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
