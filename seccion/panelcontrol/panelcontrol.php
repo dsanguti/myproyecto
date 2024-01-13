@@ -14,7 +14,7 @@ session_start();
 
 
                     <div class="col d-flex">
-                        <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i
+                        <a href="#insertarModal_PC" class="btn btn-primary" data-bs-toggle="modal"><i
                                 class="bi bi-plus"></i>
                             Nuevo</a>
 
@@ -65,13 +65,13 @@ session_start();
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                             Nombre</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Nombre</th>
-                                        <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                             Apellido</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                             Usuario</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                             Clave</th>
+                                        <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
+                                            Perfil</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                             Directorio</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
@@ -145,8 +145,8 @@ session_start();
                 include("../directorio/modal/modal_eliminar.php");
                 ?>
 
-                <!-- El modal para insertar un nuevo contacto en el Directorio-->
-                <?php include("../directorio/modal/modal_insertar.php"); ?>
+                <!-- El modal para insertar un nuevo Usuario-->
+                <?php include("../panelcontrol/modal/modal_insertar_pc.php"); ?>
 
             </div>
 
@@ -155,18 +155,7 @@ session_start();
 
 
     </div>
-    <div class="row">
-        <div class="col mt-3">
 
-            <a href="http://localhost/myproyecto/fpdf/directorio/genera_dir.php" class="col mytooltip" target=”_blank”
-                role="button" data-tooltip="Genera un PDF del Directorio"> <i id="icon-pdf-dir"
-                    class="bi bi-file-earmark-pdf-fill"></i></a>
-
-
-
-
-        </div>
-    </div>
 
 </div>
 </div>
