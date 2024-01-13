@@ -43,15 +43,15 @@ session_start();
             <div class="row">
                 <div class="col">
                     <!-- Se realiza la conexión con la basde de datos Directorio -->
-                    <?php include_once('../../bd/directorio/conector_BD_directorio.php'); ?>
+                    <?php include_once('../../bd/panelcontrol/conector_BD_usuarios.php'); ?>
 
 
-                    <div id="tabla_directorio">
+                    <div id="tabla_panel_control">
 
-                        <?php include_once('../../bd/directorio/conector_BD_directorio.php');
+                        <?php include_once('../../bd/panelcontrol/conector_BD_panelcontrol.php');
 
                         //Obtener el número total de registros 
-                        $result = $conn->query("SELECT * FROM directorio");
+                        $result = $conn->query("SELECT * FROM usuarios");
 
 
                         ?>
@@ -63,30 +63,26 @@ session_start();
                                     <tr>
                                         <th style="display:none;" scope="col">id</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Puesto</th>
+                                            Nombre</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                             Nombre</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Apellidos</th>
+                                            Apellido</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Oficina</th>
+                                            Usuario</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Teléfono</th>
+                                            Clave</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Extensión</th>
+                                            Directorio</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
-                                            Correo</th>
-
-                                        <?php
-                                        if ($_SESSION["directorio"] === "editar") {
-                                        ?>
+                                            Inventario</th>
+                                        <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
+                                            Estado</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:orange;"
                                             scope="col">Edit</th>
                                         <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:red;"
                                             scope="col">Del</th>
-                                        <?php
-                                        }
-                                        ?>
+
 
                                     </tr>
                                 </thead>
@@ -95,19 +91,19 @@ session_start();
                                     <tr class="celda_tabla_directorio">
 
                                         <td style='display:none;'><?php echo $row['id'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['puesto'] ?>
-                                        </td>
                                         <td style='text-align:center;'><?php echo $row['nombre'] ?>
                                         </td>
-                                        <td style='text-align:center;'>
-                                            <?php echo $row['apellidos'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['oficina'] ?>
-                                        </td>
-                                        <td style='text-align:center;'><?php echo $row['telefono'] ?>
+                                        <td style='text-align:center;'><?php echo $row['apellido'] ?>
                                         </td>
                                         <td style='text-align:center;'>
-                                            <?php echo $row['extension'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['correo'] ?>
+                                            <?php echo $row['usuario'] ?></td>
+                                        <td style='text-align:center;'><?php echo $row['clave'] ?>
+                                        </td>
+                                        <td style='text-align:center;'><?php echo $row['perfil'] ?>
+                                        </td>
+                                        <td style='text-align:center;'>
+                                            <?php echo $row['directorio'] ?></td>
+                                        <td style='text-align:center;'><?php echo $row['inventario'] ?>
                                         </td>
                                         <?php
 

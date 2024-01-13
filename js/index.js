@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Carga_Directorio();
   } else if (miUrl === "http://localhost/myproyecto/#/inventario") {
     Carga_Inventario();
-  } else if (miUrl === "http://http://localhost/myproyecto/#/") {
+  } else if (miUrl === "http://localhost/myproyecto/#/") {
     Carga_Inicio();
   } else if (miUrl === "http://localhost/myproyecto/#/panelcontrol") {
     Carga_Panel_Control();
