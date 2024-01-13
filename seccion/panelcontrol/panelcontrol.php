@@ -48,7 +48,7 @@ session_start();
 
                     <div id="tabla_panel_control">
 
-                        <?php include_once('../../bd/panelcontrol/conector_BD_panelcontrol.php');
+                        <?php
 
                         //Obtener el número total de registros 
                         $result = $conn->query("SELECT * FROM usuarios");
@@ -105,10 +105,9 @@ session_start();
                                             <?php echo $row['directorio'] ?></td>
                                         <td style='text-align:center;'><?php echo $row['inventario'] ?>
                                         </td>
-                                        <?php
+                                        <td style='text-align:center;'><?php echo $row['estado'] ?>
+                                        </td>
 
-                                            if ($_SESSION["directorio"] === "editar") {
-                                            ?>
                                         <td style='text-align:center;'> <button id='btn-edit-directorio'
                                                 class='edit-table' data-bs-toggle='modal'
                                                 data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
@@ -122,11 +121,8 @@ session_start();
 
                                             <!-- El modal de Eliminar-->
                                             <?php include("./modal/modal_eliminar.php");
-                                                    ?>
-
-                                            <?php
-                                            }
                                                 ?>
+
 
                                     </tr>
 
