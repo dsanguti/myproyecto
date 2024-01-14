@@ -30,13 +30,15 @@
                                                 id="insert-apellidoPC" aria-label="apellidoPC" required>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
-                                        <div class="col-9 col-sm-5 mb-3">
+                                        <div class="col-9 col-sm-5 mb-3 mb-3">
                                             <label for="usuarioPC" class="form-label">Usuario</label>
                                             <input type="text" class="form-control" name="usuarioPC"
                                                 id="insert-usuarioPC" aria-label="usuarioPC" required>
                                         </div>
-                                        <div class="col-9 col-sm-5 mb-3 mb-3">
+                                        <div class="col-9 col-sm-5 mb-3">
                                             <label for="perfilPC" class="form-label">Perfil</label>
                                             <input type="text" class="form-control" name="perfilPC" id="insert-perfilPC"
                                                 aria-label="perfilPC" required>
