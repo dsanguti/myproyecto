@@ -13,7 +13,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="seccion/directorio/guardar_directorio.php" method="post" id="insertar-PC">
+                            <form action="seccion/panelcontrol/guardar_pc.php" method="post" id="insertar-PC">
                                 <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3">
@@ -56,8 +56,8 @@
                                             <label for="estadoPC" class="form-label">Estado</label>
                                             <select name="estadoPC" id="insert-estadoPC" class="form-select" required>
                                                 <option selected>Seleccionar...</option>
-                                                <option>editar</option>
-                                                <option>consulta</option>
+                                                <option>activo</option>
+                                                <option>inactivo</option>
                                             </select>
                                         </div>
                                     </div>

@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-class ConectarBD
+class ConectarBD_PC
 {
     private $server = "mysql: host=localhost; dbname=panelcontrol";
     private $user = "root";

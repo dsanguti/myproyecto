@@ -3,7 +3,7 @@
 session_start();
 
 include_once('../../bd/directorio/conector_BD_directorio.php');
-if (isset($_POST['edit'])) {
+if (isset($_POST['edit_pc'])) {
     $database = new ConectarBD();
     $db = $database->abrir();
     try {
