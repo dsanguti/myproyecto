@@ -108,19 +108,19 @@ session_start();
                                         <td style='text-align:center;'><?php echo $row['estado'] ?>
                                         </td>
 
-                                        <td style='text-align:center;'> <button id='btn-edit-directorio'
-                                                class='edit-table' data-bs-toggle='modal'
-                                                data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                        <td style='text-align:center;'> <button id='btn-edit-PC' class='edit-table'
+                                                data-bs-toggle='modal'
+                                                data-bs-target='#modal-edit-PC<?php echo $row['id']; ?>'>
                                                 <i class='bi bi-pencil-square'></i></button>
-                                        <td style='text-align:center;'> <button id='btn-del-directorio'
-                                                class='del-table' data-bs-toggle='modal'
-                                                data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
+                                        <td style='text-align:center;'> <button id='btn-del-pc' class='del-table'
+                                                data-bs-toggle='modal'
+                                                data-bs-target='#modal-del-pc<?php echo $row['id']; ?>'><i
                                                     class='bi bi-trash'></i></button>
                                             <!-- El modal de editar-->
-                                            <?php include("./modal/modal_editar.php"); ?>
+                                            <?php include("./modal/modal_editar_pc.php"); ?>
 
                                             <!-- El modal de Eliminar-->
-                                            <?php include("./modal/modal_eliminar.php");
+                                            <?php include("./modal/modal_eliminar_pc.php");
                                                 ?>
 
 
