@@ -1,24 +1,26 @@
 <?php
 
-session_start();
+session_start(); // Inicia la sesión si aún no se ha hecho
+include_once('../../bd/panelcontrol/conector_BD_usuarios.php');
 
-include_once('../../bd/directorio/conector_BD_directorio.php');
-if (isset($_POST['edit_pc'])) {
-    $database = new ConectarBD();
+if (isset($_POST['edit_PC'])) {
+    $database = new ConectarBD_PC();
     $db = $database->abrir();
+
     try {
 
         $id = $_GET['id'];
-        $puestoD = $_POST['puestoDirectorio'];
-        $nombreD = $_POST['nombreDirectorio'];
-        $apellidosD = $_POST['apellidos_directorio'];
-        $correoD = $_POST['correo_directorio'];
-        $oficinaD = $_POST['oficina_directorio'];
-        $telefonoD = $_POST['telefono_directorio'];
-        $extensionD = $_POST['extension_directorio'];
+        $nombrePC = $_POST['nombrePC'];
+        $apellidoPC = $_POST['apellidoPC'];
+        $usuarioPC = $_POST['usuarioPC'];
+        $perfilPC = $_POST['perfilPC'];
+        $clavePC = $_POST['clavePC'];
+        $estadoPC = $_POST['estadoPC'];
+        $directorioPC = $_POST['directorioPC'];
+        $inventarioPC = $_POST['inventarioPC'];
 
-        $sql = "UPDATE directorio SET 
-            puesto = '$puestoD', nombre = '$nombreD', apellidos = '$apellidosD', correo = '$correoD', oficina = '$oficinaD', telefono = '$telefonoD', extension = '$extensionD' 
+        $sql = "UPDATE usuarios SET 
+            nombre = '$nombrePC', apellido = '$apellidoPC', usuario = '$usuarioPC', perfil = '$perfilPC', clave = '$clavePC', estado = '$estadoPC', directorio = '$directorioPC', inventario = '$inventarioPC' 
             WHERE id = '$id'";
 
         $_SESSION['message'] = ($db->exec($sql)) ? 'Datos actualizados correctamente' : 'No se pudo actualizar los datos';
@@ -31,4 +33,4 @@ if (isset($_POST['edit_pc'])) {
 }
 
 
-header('location: http://localhost/myproyecto/#/directorio');
+header('location: http://localhost/myproyecto/#/panelcontrol');
