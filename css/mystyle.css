@@ -267,11 +267,18 @@ input[type="search"]::-webkit-search-clear-button {
 .liInventario {
   margin: 15px;
 }
+.mynavbarInventario {
+  background-color: #3498db;
+  transition: background-color 0.3s ease;
+}
+.mynavbarInventario:hover {
+  background-color: #2980b9;
+}
 @media (max-width: 768px) {
-  .mynavbarInventario {
+  .myUlInventario {
     flex-direction: row !important;
   }
-  .mynavbarEtiquetas {
+  .myUlEtiquetas {
     justify-content: flex-start !important;
     align-items: flex-start !important;
   }
