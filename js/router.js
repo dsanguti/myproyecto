@@ -10,5 +10,13 @@ const Router = () => {
     Carga_Inventario();
   } else if (hash == "#/panelcontrol") {
     Carga_Panel_Control();
+  } else if (hash == "#/inventario/UCI") {
+    Carga_InventarioUCI();
+  } else if (hash == "#/inventario/DP") {
+    Carga_InventarioDP();
+  } else if (hash == "#/inventario/OE") {
+    Carga_InventarioOE();
+  } else if (hash == "#/inventario/COE") {
+    Carga_InventarioCOE();
   }
 };

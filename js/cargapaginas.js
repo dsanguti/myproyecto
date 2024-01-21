@@ -50,6 +50,58 @@ function Carga_Inventario() {
   xhttp.send();
 }
 
+// Se carga dentro de inventario la sección de UCI
+
+function Carga_InventarioUCI() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("mainInventario").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/myproyecto/seccion/inventario/inventarioUCI.php", true);
+  xhttp.send();
+}
+
+// Se carga dentro de inventario la sección de DP
+
+function Carga_InventarioDP() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("mainInventario").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/myproyecto/seccion/inventario/inventarioDP.php", true);
+  xhttp.send();
+}
+
+// Se carga dentro de inventario la sección de OE
+
+function Carga_InventarioOE() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("mainInventario").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/myproyecto/seccion/inventario/inventarioOE.php", true);
+  xhttp.send();
+}
+
+// Se carga dentro de inventario la sección de COE
+
+function Carga_InventarioCOE() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("mainInventario").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/myproyecto/seccion/inventario/inventarioCOE.php", true);
+  xhttp.send();
+}
+
 // Se carga la sección de demandas
 
 function Carga_Demandas() {

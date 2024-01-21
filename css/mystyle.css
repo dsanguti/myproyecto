@@ -119,6 +119,13 @@ horizontalmente */
   margin-top: 12px;
 }
 
+/* NAVBAR DE LA PAGINA PRINCIPAL*/
+
+/* PARA QUE SE DESPLIEGUEN LOS MENUS AL HACER HOVER*/
+.navbar-nav .nav-item:hover .dropdown-menu {
+  display: block;
+}
+
 /* SECCIÓN DIRECTORIO */
 
 /* ICONO PDF*/
@@ -254,4 +261,22 @@ input[type="search"]::-webkit-search-clear-button {
 .mytooltip:hover::before {
   visibility: visible;
   opacity: 1;
+}
+
+/* SECCIÓN INVENTARIO*/
+
+@media (max-width: 768px) {
+  .mynavbarInventario {
+    flex-direction: row !important;
+  }
+  .mynavbarEtiquetas {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+  .colum1Inventario {
+    height: 15%;
+  }
+  .colum2Inventario {
+    height: 75%;
+  }
 }
