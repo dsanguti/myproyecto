@@ -16,16 +16,16 @@
                 <!-- Contenido del Navbar -->
                 <ul
                     class="navbar-nav flex-column justify-content-center align-items-center mynavbarInventario mynavbarEtiquetas">
-                    <li class="nav-item">
+                    <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/UCI">UCI</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/DP">DP</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/OE">OE</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/COE">COE</a>
                     </li>
                 </ul>

@@ -264,7 +264,9 @@ input[type="search"]::-webkit-search-clear-button {
 }
 
 /* SECCIÓN INVENTARIO*/
-
+.liInventario {
+  margin: 15px;
+}
 @media (max-width: 768px) {
   .mynavbarInventario {
     flex-direction: row !important;
@@ -278,5 +280,8 @@ input[type="search"]::-webkit-search-clear-button {
   }
   .colum2Inventario {
     height: 75%;
+  }
+  .liInventario {
+    margin-right: 15px;
   }
 }
