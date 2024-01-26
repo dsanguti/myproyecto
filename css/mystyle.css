@@ -123,7 +123,6 @@ horizontalmente */
 
 /* PARA QUE SE DESPLIEGUEN LOS MENUS AL HACER HOVER*/
 .navbar-nav .nav-item:hover .dropdown-menu {
-  display: block;
 }
 
 /* SECCIÓN DIRECTORIO */
@@ -266,6 +265,7 @@ input[type="search"]::-webkit-search-clear-button {
 /* SECCIÓN INVENTARIO*/
 .liInventario {
   margin: 15px;
+  background-color: #3498db;
 }
 .mynavbarInventario {
   background-color: #3498db;

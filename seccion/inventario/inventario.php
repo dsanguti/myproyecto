@@ -1,14 +1,14 @@
-<div class="container-fluid vh-100">
-    <div class="row h-10">
+<div class="container-fluid p-0">
+    <div style="margin:0px; padding:0px;" class="row w-100">
         <!-- Contenido de la fila adicional al principio -->
         <div class="col-md-12" style=" padding-top:10px; text-align: center; background-color: cadetblue;">
             <h2>Inventario</h2>
 
         </div>
     </div>
-    <div class="row h-100">
+    <div style="margin:0px; padding:0px; height:100vh;" class="row w-100">
         <!-- Columna 1: Ocupa el 15% del ancho total -->
-        <div class="col-md-2 bg-light d-flex flex-column justify-content-center align-items-center colum1Inventario">
+        <div class="col-md-2 bg-light h-100 d-flex flex-column justify-content-center align-items-center colum1Inventario">
             <!-- Contenido de la primera columna -->
             <!-- Navbar Vertical -->
             <nav class="navbar navbar-expand navbar-light navbarInventario" style="background-color:#3498db;transition: background-color 0.3s ease;">
