@@ -290,9 +290,9 @@ input[type="search"]::-webkit-search-clear-button {
 }
 
 .liInventario {
-  background-color: #44b3ec;
+  background-color: #0e6ba5;
   width: 100%;
-  border-left: 5px solid #44b3ec;
+  border-left: 5px solid #0e6ba5;
   transition: background-color 0.3s ease;
 }
 
