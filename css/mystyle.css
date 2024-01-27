@@ -269,6 +269,7 @@ input[type="search"]::-webkit-search-clear-button {
   width: 100px;
   background-color: #44b3ec;
   border-radius: 10px;
+
   -webkit-box-shadow: 10px 10px 26px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 26px -7px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 26px -7px rgba(0, 0, 0, 0.75);
@@ -282,15 +283,13 @@ input[type="search"]::-webkit-search-clear-button {
 .liInventario {
   background-color: #44b3ec;
   width: 100%;
+  border-left: 5px solid #44b3ec;
   transition: background-color 0.3s ease;
 }
 
-.liInventario.active,
 .liInventario:hover {
   background-color: #85cdf4;
-}
-.liInventario:hover {
-  background-color: #85cdf4;
+  border-color:  #0c2c45;
 }
 .liInventario a {
   display: block; /* Asegura que el enlace ocupe todo el espacio del li */
@@ -304,14 +303,7 @@ input[type="search"]::-webkit-search-clear-button {
 .liInventario a:hover {
   color: #0c2c45;
   font-weight: bold;
-}
-
-.liInventario.active a,
-.liInventario:hover a {
-  color: #0c2c45;
-  border-left: 5px solid #0c2c45;
-  background-color: #85cdf4;
-}
+  
 
 @media (max-width: 768px) {
   .myUlInventario {
