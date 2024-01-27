@@ -13,7 +13,7 @@
             <nav style="margin:0px; padding:0px;" class="navbar navbar-light navbarInventario">
                 <!-- Contenido del Navbar -->
                 <ul class="navbar-nav myUlInventario myUlEtiquetas">
-                    <li id="PrimerLiNavbarInventario" style="border-top-right-radius: 10px;border-top-left-radius: 10px;" class="nav-item liInventario">
+                    <li id="PrimerLiNavbarInventario" class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/UCI">UCI</a>
                     </li>
                     <li class="nav-item liInventario">
@@ -22,7 +22,7 @@
                     <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/OE">OE</a>
                     </li>
-                    <li id="UltimoLiNavbarInventario" style="border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;" class="nav-item liInventario">
+                    <li id="UltimoLiNavbarInventario" class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/COE">COE</a>
                     </li>
                 </ul>
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Columna 2: Ocupa el 85% del ancho total -->
-        <div class="col-md-10 colum2Inventario" style="background-color: #e0e0e0;">
+        <div class="col-md-11 colum2Inventario" style="background-color: #e0e0e0;">
             <!-- Contenido de la segunda columna -->
             <div id="mainInventario"></div>
         </div>

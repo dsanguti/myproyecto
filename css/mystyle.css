@@ -314,7 +314,16 @@ input[type="search"]::-webkit-search-clear-button {
   font-weight: bold;
 }
 
-@media (max-width: 767px) {
+#PrimerLiNavbarInventario {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+#UltimoLiNavbarInventario {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@media (max-width: 1482px) {
   .colum1Inventario {
     margin-top: 15px;
     justify-content: flex-start;
@@ -332,8 +341,13 @@ input[type="search"]::-webkit-search-clear-button {
 
   #PrimerLiNavbarInventario {
     border-bottom-left-radius: 10px;
+    border-top-right-radius: 0px;
   }
   #UltimoLiNavbarInventario {
     border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+  #UltimoLiNavBarInventario:hover {
+    border-bottom-left-radius: 0px;
   }
 }
