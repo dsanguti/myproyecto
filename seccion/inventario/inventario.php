@@ -22,7 +22,7 @@
                     <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/OE">OE</a>
                     </li>
-                    <li id="UltimoLiNavbarInventario" class="nav-item liInventario">
+                    <li style="border-bottom:0px solid" id="UltimoLiNavbarInventario" class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/COE">COE</a>
                     </li>
                 </ul>
