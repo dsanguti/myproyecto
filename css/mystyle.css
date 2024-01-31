@@ -336,6 +336,11 @@ input[type="search"]::-webkit-search-clear-button {
     width: 75%;
   }
 
+  .liInventario {
+    border-right: 1px groove white;
+    border-bottom: 0px solid;
+  }
+
   .myUlInventario {
     flex-direction: row;
   }
@@ -347,6 +352,7 @@ input[type="search"]::-webkit-search-clear-button {
   #UltimoLiNavbarInventario {
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0px;
+    border-right: 0px solid;
   }
   #UltimoLiNavBarInventario:hover {
     border-bottom-left-radius: 0px;
