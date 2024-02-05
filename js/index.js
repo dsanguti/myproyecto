@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     Carga_Inicio();
   } else if (miUrl === "http://localhost/myproyecto/#/panelcontrol") {
     Carga_Panel_Control();
+  } else if (miUrl === "http://localhost/myproyecto/#/inventario/UCI") {
+    Carga_Inventario();
+    Carga_InventarioUCI();
   }
 });
 
