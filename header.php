@@ -19,6 +19,9 @@ if (empty($_SESSION["id"])) {
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/mystyle.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+    </style>
 
 </head>
 

@@ -2,7 +2,7 @@
     <div style="margin:0px; padding:0px;" class="row">
         <!-- Contenido de la fila adicional al principio -->
         <div class="col-md-12" style="padding-top:10px; text-align: center;">
-            <h3 style="color:#18181B;">Inventario de la Unidad de Coordinación Informática</h3>
+            <h2>Inventario</h2>
         </div>
     </div>
     <div style="margin:0px; padding:0px;" class="row">
@@ -19,7 +19,7 @@
                     <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/OE">OE</a>
                     </li>
-                    <li id="UltimoLiNavbarInventario" class="nav-item liInventario">
+                    <li style="border-bottom:0px solid" id="UltimoLiNavbarInventario" class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/COE">COE</a>
                     </li>
                 </ul>
@@ -27,9 +27,21 @@
         </div>
 
         <!-- Columna 2: Ocupa el 85% del ancho total -->
-        <div class="col-md-11 colum2Inventario" style="background-color: #e0e0e0;">
+        <div class="col-md-11 colum2Inventario">
+            <div style="margin:0px; padding:0px;" class="row">
+                <!-- Contenido de la fila adicional al principio -->
+                <div class="col-md-12" style="padding-top:10px; text-align: center;">
+                    <h2 class="titulo_seccion">Inventario</h2>
+                </div>
+            </div>
             <!-- Contenido de la segunda columna -->
-            <div id="mainInventario"></div>
+            <div class="container-fluid" id="mainInventario">
+
+                <div id="container_img_inventario">
+                    <img id="img_inventario" src="http://localhost/myproyecto/img/inventario.jpg"
+                        alt="Sección inventario">
+                </div>
+            </div>
         </div>
     </div>
 </div>
