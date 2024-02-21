@@ -1,1 +1,1 @@
-<h2>Inventario de la DP</h2>
+<h2>Inventario de DP</h2>

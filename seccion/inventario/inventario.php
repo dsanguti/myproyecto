@@ -2,7 +2,7 @@
     <div style="margin:0px; padding:0px;" class="row">
         <!-- Contenido de la fila adicional al principio -->
         <div class="col-md-12" style="padding-top:10px; text-align: center;">
-            <h2>Inventario</h2>
+            <h3 style="color:#18181B;">Inventario de la Unidad de Coordinación Informática</h3>
         </div>
     </div>
     <div style="margin:0px; padding:0px;" class="row">
@@ -14,9 +14,6 @@
                 <!-- Contenido del Navbar -->
                 <ul class="navbar-nav myUlInventario myUlEtiquetas">
                     <li id="PrimerLiNavbarInventario" class="nav-item liInventario">
-                        <a class="nav-link" href="#/inventario/UCI">UCI</a>
-                    </li>
-                    <li class="nav-item liInventario">
                         <a class="nav-link" href="#/inventario/DP">DP</a>
                     </li>
                     <li class="nav-item liInventario">

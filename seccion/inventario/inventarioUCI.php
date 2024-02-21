@@ -1,1 +1,0 @@
-<h2>Inventario de UCI</h2>
