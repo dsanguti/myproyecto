@@ -17,7 +17,7 @@ session_start();
                     if ($_SESSION["inventario"] === "editar") {
                     ?>
                         <div class="col d-flex">
-                            <a href="#insertarModal" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
+                            <a href="#insertarModal_inv" class="btn btn-primary" data-bs-toggle="modal"><i class="bi bi-plus"></i>
                                 Nuevo</a>
 
                         </div>
@@ -123,10 +123,10 @@ session_start();
                                                         <i class='bi bi-pencil-square'></i></button>
                                                 <td style='text-align:center;'> <button id='btn-del-inventario' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-inventario<?php echo $row['id']; ?>'><i class='bi bi-trash'></i></button>
                                                     <!-- El modal de editar-->
-                                                    <?php include("./modal/modal_editar.php"); ?>
+                                                    <?php include("./modal/modal_editar_inv.php"); ?>
 
                                                     <!-- El modal de Eliminar-->
-                                                    <?php include("./modal/modal_eliminar.php");
+                                                    <?php include("./modal/modal_eliminar_inv.php");
                                                     ?>
 
                                                 <?php
@@ -146,16 +146,16 @@ session_start();
                 </div>
                 <!-- El modal de editar-->
                 <?php
-                include("../directorio/modal/modal_editar.php");
+                include("../inventario/modal/modal_editar_inv.php");
                 ?>
 
                 <!-- El modal de Eliminar-->
                 <?php
-                include("../directorio/modal/modal_eliminar.php");
+                include("../inventario/modal/modal_eliminar_inv.php");
                 ?>
 
                 <!-- El modal para insertar un nuevo contacto en el Directorio-->
-                <?php include("../directorio/modal/modal_insertar.php"); ?>
+                <?php include("../inventario/modal/modal_insertar_inv.php"); ?>
 
             </div>
 
@@ -163,16 +163,6 @@ session_start();
         </div>
 
 
-    </div>
-    <div class="row">
-        <div class="col mt-3">
-
-            <a href="http://localhost/myproyecto/fpdf/directorio/genera_dir.php" class="col mytooltip" target=”_blank” role="button" data-tooltip="Genera un PDF del Directorio"> <i id="icon-pdf-dir" class="bi bi-file-earmark-pdf-fill"></i></a>
-
-
-
-
-        </div>
     </div>
 
 </div>
