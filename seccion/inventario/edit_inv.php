@@ -1,26 +1,29 @@
 <?php
 
 session_start(); // Inicia la sesión si aún no se ha hecho
-include_once('../../bd/panelcontrol/conector_BD_usuarios.php');
+include_once('../../bd/inventario/conector_BD_inventario.php');
 
-if (isset($_POST['edit_PC'])) {
-    $database = new ConectarBD_PC();
+if (isset($_POST['edit_INV'])) {
+    $database = new ConectarBD_INV();
     $db = $database->abrir();
 
     try {
 
         $id = $_GET['id'];
-        $nombrePC = $_POST['nombrePC'];
-        $apellidoPC = $_POST['apellidoPC'];
-        $usuarioPC = $_POST['usuarioPC'];
-        $perfilPC = $_POST['perfilPC'];
-        $clavePC = $_POST['clavePC'];
-        $estadoPC = $_POST['estadoPC'];
-        $directorioPC = $_POST['directorioPC'];
-        $inventarioPC = $_POST['inventarioPC'];
+        $cod_elemento = $_POST['cod_elemento'];
+        $modelo = $_POST['modelo'];
+        $n_serie = $_POST['n_serie'];
+        $ip_INV = $_POST['ip'];
+        $situacion = $_POST['situacion_INV'];
+        $estado = $_POST['estadoINV'];
+        $f_inicio_mto = $_POST['f_inicio_mto_INV'];
+        $f_fin_mto = $_POST['f_fin_mto_INV'];
+        $proveedor = $_POST['proveedor_INV'];
+        $centro = $_POST['centroINV'];
 
-        $sql = "UPDATE usuarios SET 
-            nombre = '$nombrePC', apellido = '$apellidoPC', usuario = '$usuarioPC', perfil = '$perfilPC', clave = '$clavePC', estado = '$estadoPC', directorio = '$directorioPC', inventario = '$inventarioPC' 
+
+        $sql = "UPDATE inventario SET 
+            cod_elemento = '$cod_elemento', modelo = '$modelo', n_serie = '$n_serie', ip = '$ip_INV', situacion = '$situacion', estado = '$estado', f_inicio_mto = '$f_inicio_mto', f_fin_mto = '$f_fin_mto', proveedor ='$proveedor', centro = '$centro' 
             WHERE id = '$id'";
 
         $_SESSION['message'] = ($db->exec($sql)) ? 'Datos actualizados correctamente' : 'No se pudo actualizar los datos';
@@ -33,4 +36,4 @@ if (isset($_POST['edit_PC'])) {
 }
 
 
-header('location: http://localhost/myproyecto/#/panelcontrol');
+header('location: http://localhost/myproyecto/#/inventario/COE');

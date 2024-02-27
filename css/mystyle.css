@@ -184,7 +184,7 @@ input[type="search"]::-webkit-search-clear-button {
 
 .table-fixed {
   overflow-y: scroll;
-  max-height: 400px;
+  max-height: 588px;
 }
 
 /* LOS ICONOS EDIT Y DEL DE LA TABLA DIRECTORIO*/
@@ -264,6 +264,10 @@ input[type="search"]::-webkit-search-clear-button {
 }
 
 /* SECCIÓN INVENTARIO*/
+
+#tabla_inventario_COE {
+  max-width: 1682px;
+}
 .colum1Inventario {
   display: flex;
   margin-top: 50px;

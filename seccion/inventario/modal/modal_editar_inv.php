@@ -3,8 +3,7 @@
         <div class="col">
 
             <!-- Modal -->
-            <div class="modal fade modal-lg" id="modal-edit-inventario<?php echo $row['id']; ?>" tabindex="-1"
-                aria-labelledby="modal-edit-PC" aria-hidden="true">
+            <div class="modal fade modal-lg" id="modal-edit-inventario<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="modal-edit-INV" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header modal-header-edit">
@@ -13,56 +12,68 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="seccion/panelcontrol/edit_pc.php?id=<?php echo $row['id']; ?>" method="post"
-                                id="form-editar-PC">
+                            <form action="seccion/inventario/edit_inv.php?id=<?php echo $row['id']; ?>" method="post" id="form-editar-INV">
                                 <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3">
 
-                                            <label for="nombrePC" class="form-label">Nombre</label>
-                                            <input style="text-align: center;" type="text" class="form-control"
-                                                name="nombrePC" value="<?php echo $row['nombre']; ?>" required>
+                                            <label for="cod_elmento" class="form-label">Cod.Elmento</label>
+                                            <input style="text-align: center;" type="text" class="form-control" name="cod_elemento" value="<?php echo $row['cod_elemento']; ?>" required>
                                         </div>
                                         <div class="col-9 col-sm-5 mb-3">
 
-                                            <input type="hidden" name="id_PC" class="form-control"
-                                                value="<?php echo $row['id']; ?>" id="editPC-id" readonly
-                                                aria-label="id_PC">
-                                            <label for="apellidoPC" class="form-label">Apellido</label>
-                                            <input style="text-align: center;" type="text" class="form-control"
-                                                name="apellidoPC" value="<?php echo $row['apellido']; ?>" required>
+                                            <input type="hidden" name="id_INV" class="form-control" value="<?php echo $row['id']; ?>" id="editINV-id" readonly aria-label="id_INV">
+                                            <label for="modelo" class="form-label">Modelo</label>
+                                            <input style="text-align: center;" type="text" class="form-control" name="modelo" value="<?php echo $row['modelo']; ?>" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3">
-                                            <label for="usuarioPC" class="form-label">Usuario</label>
-                                            <input style="text-align: center;" type="text" class="form-control"
-                                                name="usuarioPC" value="<?php echo $row['usuario']; ?>" required>
+                                            <label for="n_serie" class="form-label">Nº Serie</label>
+                                            <input style="text-align: center;" type="text" class="form-control" name="n_serie" value="<?php echo $row['n_serie']; ?>" required>
                                         </div>
                                         <div class="col-9 col-sm-5 mb-3 mb-3">
-                                            <label for="oficina_directorio" class="form-label">Perfil</label>
-                                            <input style="text-align: center;" type="text" class="form-control"
-                                                name="perfilPC" id="edit-perfilPC" aria-describedby="perfilPC"
-                                                value="<?php echo $row['perfil']; ?>" required>
+                                            <label for="ip" class="form-label">IP</label>
+                                            <input style="text-align: center;" type="text" class="form-control" name="ip" id="edit_ip_INV" aria-describedby="ip" value="<?php echo $row['ip']; ?>">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3 mb-3">
-                                            <label for="clavePC" class="form-label">Clave</label>
-                                            <input style="text-align: center;" type="text" class="form-control"
-                                                name="clavePC" id="edit-clavePC" aria-describedby="clavePC"
-                                                value="<?php echo $row['clave']; ?>" required>
+                                            <label for="proveedor_INV" class="form-label">Proveedor</label>
+                                            <input style="text-align: center;" type="text" class="form-control" name="proveedor_INV" id="edit-proveedor_INV" aria-describedby="proveedor_INV" value="<?php echo $row['proveedor']; ?>" required>
                                         </div>
                                         <div class="col-9 col-sm-5 mb-3">
-                                            <label for="estadoPC" class="form-label">Estado</label>
-                                            <select name="estadoPC" id="edit-estadoPC" class="form-select" required>
+                                            <label for="situacion_INV" class="form-label">Situación</label>
+                                            <select name="situacion_INV" id="edit-situacionINV" class="form-select" required>
+                                                <option><?php echo $row['situacion']; ?></option>
+                                                <option>Adquirido</option>
+                                                <option>Alquilado</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center g-3">
+                                    <div class="row justify-content-center g-3">
+                                        <div class="col-9 col-sm-5 mb-3">
+                                            <label for="estadoINV" class="form-label">Estado</label>
+                                            <select name="estadoINV" id="edit-estadoINV" class="form-select" required>
                                                 <option><?php echo $row['estado']; ?></option>
-                                                <option>activo</option>
-                                                <option>inactivo</option>
+                                                <option>Garantía</option>
+                                                <option>Fuera de Mantenimiento</option>
+                                                <option>Mantenimiento</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-9 col-sm-5 mb-3">
+                                            <label for="centroINV" class="form-label">Centro</label>
+                                            <select name="centroINV" id="edit-centroINV" class="form-select" required>
+                                                <option><?php echo $row['centro']; ?></option>
+                                                <option>DP</option>
+                                                <option>OE</option>
+                                                <option>COE</option>
                                             </select>
                                         </div>
                                     </div>
@@ -70,33 +81,25 @@
                                 <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3">
-                                            <label for="directorioPC" class="form-label">Directorio</label>
-                                            <select name="directorioPC" id="edit-directorioPC" class="form-select"
-                                                required>
-                                                <option><?php echo $row['directorio']; ?></option>
-                                                <option>editar</option>
-                                                <option>consulta</option>
-                                            </select>
+                                            <label for="f_inicio_mto_INV" class="form-label">F. Inicio Mto</label>
+                                            <input type="date" name="f_inicio_mto_INV" id="edit-f_inicio_mto_INV" class="form-select" value="<?php echo $row['f_inicio_mto']; ?>" required>
+
                                         </div>
                                         <div class="col-9 col-sm-5 mb-3">
-                                            <label for="inventarioPC" class="form-label">Inventario</label>
-                                            <select name="inventarioPC" id="edit-inventarioPC" class="form-select"
-                                                required>
-                                                <option><?php echo $row['inventario']; ?></option>
-                                                <option>editar</option>
-                                                <option>consulta</option>
-                                            </select>
+                                            <label for="f_fin_mto_INV" class="form-label">F. Fin Mto</label>
+                                            <input type="date" name="f_fin_mto_INV" id="edit-f_fin_mto_INV" class="form-select" value="<?php echo $row['f_fin_mto']; ?>" required>
+
                                         </div>
+
                                     </div>
                                 </div>
 
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success"
-                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
                                     <!-- <button type="button" name="edit" id="btn-edit-guardar"
                                             onclick="Carga_Directorio()" class="btn btn-primary">-->
-                                    <button type="submit" name="edit_PC" id="btn-edit-guardar" class="btn btn-success">
+                                    <button type="submit" name="edit_INV" id="btn-edit-guardar" class="btn btn-success">
                                         <i class="bi bi-pencil-square"></i> Actualizar</button>
                                 </div>
 
