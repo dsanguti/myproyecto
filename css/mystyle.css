@@ -184,7 +184,7 @@ input[type="search"]::-webkit-search-clear-button {
 
 .table-fixed {
   overflow-y: scroll;
-  max-height: 400px;
+  max-height: 588px;
 }
 
 /* LOS ICONOS EDIT Y DEL DE LA TABLA DIRECTORIO*/
@@ -264,6 +264,10 @@ input[type="search"]::-webkit-search-clear-button {
 }
 
 /* SECCIÓN INVENTARIO*/
+
+#tabla_inventario_COE {
+  max-width: 1682px;
+}
 .colum1Inventario {
   display: flex;
   margin-top: 50px;
@@ -335,6 +339,9 @@ input[type="search"]::-webkit-search-clear-button {
   margin: auto;
   border-radius: 10px;
   height: 550px;
+  -webkit-box-shadow: 10px 10px 26px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 26px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 26px -7px rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 1482px) {
   .colum1Inventario {
@@ -369,6 +376,16 @@ input[type="search"]::-webkit-search-clear-button {
   #UltimoLiNavBarInventario:hover {
     border-bottom-left-radius: 0px;
   }
+  .titulo_seccion {
+    font-family: "Protest Riot", sans-serif;
+    color: #094d82;
+  }
+
+  .subtitulo_seccion {
+    font-family: "Protest Riot", sans-serif;
+    color: #098211;
+    font-size: small;
+  }
 }
 
 /*Fuente para títulos de secciones*/
@@ -376,9 +393,4 @@ input[type="search"]::-webkit-search-clear-button {
 .titulo_seccion {
   font-family: "Protest Riot", sans-serif;
   color: #094d82;
-}
-.subtitulo_seccion {
-  font-family: "Protest Riot", sans-serif;
-  color: #094d82;
-  font-size: large;
 }
