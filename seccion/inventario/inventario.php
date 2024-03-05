@@ -1,8 +1,9 @@
 <div class="container-fluid p-0">
     <div style="margin:0px; padding:0px;" class="row">
         <!-- Contenido de la fila adicional al principio -->
-        <div class="col-md-12" style="padding-top:10px; text-align: center;">
-            <h2>Inventario</h2>
+        <div class="col-md-12 titulo_seccion" style="padding-top:18px; text-align: center;">
+            <h2>Inventario de Coordinación Informática</h2>
+            <h2 class="subtitulo_seccion">Seleccione la oficina ...</h2>
         </div>
     </div>
     <div style="margin:0px; padding:0px;" class="row">
@@ -27,13 +28,8 @@
         </div>
 
         <!-- Columna 2: Ocupa el 85% del ancho total -->
-        <div class="col-md-11 colum2Inventario">
-            <div style="margin:0px; padding:0px;" class="row">
-                <!-- Contenido de la fila adicional al principio -->
-                <div class="col-md-12" style="padding-top:10px; text-align: center;">
-                    <h2 class="titulo_seccion">Inventario</h2>
-                </div>
-            </div>
+        <div class="col-md-11 colum2Inventario" style="margin:auto">
+
             <!-- Contenido de la segunda columna -->
             <div class="container-fluid" id="mainInventario">
 
@@ -42,6 +38,7 @@
                         alt="Sección inventario">
                 </div>
             </div>
+
         </div>
     </div>
 </div>

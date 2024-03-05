@@ -377,3 +377,8 @@ input[type="search"]::-webkit-search-clear-button {
   font-family: "Protest Riot", sans-serif;
   color: #094d82;
 }
+.subtitulo_seccion {
+  font-family: "Protest Riot", sans-serif;
+  color: #094d82;
+  font-size: large;
+}
