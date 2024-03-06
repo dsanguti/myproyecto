@@ -1,1 +1,0 @@
-<h1>Estoy en Inventario</h1>

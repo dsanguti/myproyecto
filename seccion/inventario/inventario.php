@@ -37,14 +37,13 @@ session_start();
                         <div class="col-md-12 titulo_seccion" style="padding-top:18px; text-align: center;">
                             <h2>Inventario</h2>
                         </div>
-                        <div class="col-md-12 " style=" text-align: center;">
-                            <h2 class="subtitulo_seccion">seleccione la oficina...</h2>
+                        <div class="col-md-12 subtitulo_seccion" style="text-align: center;">
+                            <h2>seleccione la oficina...</h2>
                         </div>
                     </div>
                 </div>
                 <div id="container_img_inventario">
-                    <img id="img_inventario" src="http://localhost/myproyecto/img/inventario.jpg"
-                        alt="Sección inventario">
+                    <img id="img_inventario" src="http://localhost/myproyecto/img/inventario.jpg" alt="Sección inventario">
                 </div>
             </div>
 
