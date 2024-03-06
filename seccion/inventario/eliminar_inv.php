@@ -27,4 +27,10 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $_SESSION['message'] = 'Oops..! Seleccione al usuario a eliminar';
 }
 
-header('location: http://localhost/myproyecto/#/inventario/COE');
+if ($_POST['centro_INV'] == "COE") {
+    header('Location: http://localhost/myproyecto/#/inventario/COE');
+} elseif ($_POST['centro_INV'] == "OE") {
+    header('Location: http://localhost/myproyecto/#/inventario/OE');
+} else {
+    header('Location: http://localhost/myproyecto/#/inventario/DP');
+}

@@ -11,7 +11,8 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p> ¿Estas seguro que deseas eliminar al siguiente elemento?</p>
+                            <input type="hidden" name="centro_INV" class="form-control" value="<?php echo $row['centro']; ?>" id="del-inv" readonly aria-label="centro_INV">
+                            <p> ¿Estas seguro que deseas eliminar el siguiente elemento?</p>
                             <h4><?php echo "Elemento con cód. " . $row['cod_elemento'] . " modelo: " . $row['modelo']; ?>
                             </h4>
                         </div>

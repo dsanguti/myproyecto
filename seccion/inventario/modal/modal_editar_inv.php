@@ -18,6 +18,9 @@
                                 <div class="row justify-content-center g-3">
                                     <div class="row justify-content-center g-3">
                                         <div class="col-9 col-sm-5 mb-3">
+                                            <input type="hidden" name="centro_INV" class="form-control"
+                                                value="<?php echo $row['centro']; ?>" id="edit-inv" readonly
+                                                aria-label="centro_INV">
 
                                             <label for="cod_elmento" class="form-label">Cod.Elmento</label>
                                             <input style="text-align: center;" type="text" class="form-control"

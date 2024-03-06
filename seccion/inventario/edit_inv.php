@@ -36,4 +36,10 @@ if (isset($_POST['edit_INV'])) {
 }
 
 
-header('location: http://localhost/myproyecto/#/inventario/COE');
+if ($_POST['centro_INV'] == "COE") {
+    header('Location: http://localhost/myproyecto/#/inventario/COE');
+} elseif ($_POST['centro_INV'] == "OE") {
+    header('Location: http://localhost/myproyecto/#/inventario/OE');
+} else {
+    header('Location: http://localhost/myproyecto/#/inventario/DP');
+}
