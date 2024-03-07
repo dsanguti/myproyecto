@@ -26,7 +26,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Empleo</a></li>
-                                    <li><a class="dropdown-item" href="#">Prestaciones</a></li>
+                                    <li><a class="dropdown-item" href="#">Prestaciones</a>
+
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown mx-2">
@@ -36,7 +38,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="#/prestaciones">Prestaciones</a>
+                                        <a class="dropdown-item submenu-prestaciones"
+                                            href="#/prestaciones">Prestaciones</a>
+
                                     </li>
                                     <li><a class="dropdown-item" href="#">Formación</a></li>
                                 </ul>

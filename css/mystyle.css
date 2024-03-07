@@ -119,11 +119,31 @@ horizontalmente */
   margin-top: 12px;
 }
 
-/* NAVBAR DE LA PAGINA PRINCIPAL*/
+/* Ocultar todos los submenús por defecto */
+.navbar-nav .nav-item .dropdown-menu {
+  display: none;
+}
 
-/* PARA QUE SE DESPLIEGUEN LOS MENUS AL HACER HOVER*/
-.navbar-nav .nav-item:hover .dropdown-menu {
+/* Mostrar el submenú "Prestaciones" al hacer hover sobre su elemento padre */
+.nav-item.dropdown:hover .submenu-prestaciones {
   display: block;
+}
+
+/* Mostrar el submenú "Sanciones" cuando se hace hover sobre el submenú "Prestaciones" */
+.submenu-prestaciones:hover .submenu-sanciones {
+  display: block;
+}
+
+/* Posicionamiento del submenú "Sanciones" */
+.submenu {
+  position: relative;
+}
+
+.submenu-sanciones {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  /* Ajusta el margen superior según sea necesario */
 }
 
 /* SECCIÓN DIRECTORIO */
