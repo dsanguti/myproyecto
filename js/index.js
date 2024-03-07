@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (miUrl === "http://localhost/myproyecto/#/inventario/COE") {
     Carga_Inventario();
     Carga_InventarioCOE();
+  } else if (miUrl === "http://localhost/myproyecto/#/inventario/OE") {
+    Carga_Inventario();
+    Carga_InventarioOE();
+  } else if (miUrl === "http://localhost/myproyecto/#/inventario/DP") {
+    Carga_Inventario();
+    Carga_InventarioDP();
   }
 });
 
