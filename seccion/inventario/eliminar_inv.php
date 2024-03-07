@@ -27,10 +27,20 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $_SESSION['message'] = 'Oops..! Seleccione al usuario a eliminar';
 }
 
-if ($_POST['centro_INV'] == "COE") {
-    header('Location: http://localhost/myproyecto/#/inventario/COE');
-} elseif ($_POST['centro_INV'] == "OE") {
-    header('Location: http://localhost/myproyecto/#/inventario/OE');
+// Recuperar el valor de 'centroINV' de $_GET en lugar de $_POST
+if (isset($_GET['centroINV'])) {
+    $centroINV = $_GET['centroINV'];
+    if ($centroINV == "COE") {
+        header('Location: http://localhost/myproyecto/#/inventario/COE');
+        exit();
+    } elseif ($centroINV == "OE") {
+        header('Location: http://localhost/myproyecto/#/inventario/OE');
+        exit();
+    } else {
+        header('Location: http://localhost/myproyecto/#/inventario/DP');
+        exit();
+    }
 } else {
-    header('Location: http://localhost/myproyecto/#/inventario/DP');
+    $_SESSION['message'] = 'Oops..! Ha ocurrido un error al redirigir';
+    // Aquí puedes agregar una redirección a una página de error o manejar la situación de alguna otra manera.
 }
