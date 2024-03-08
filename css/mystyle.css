@@ -119,29 +119,38 @@ horizontalmente */
   margin-top: 12px;
 }
 
-/* Mostrar el submenú al hacer hover sobre el elemento padre */
-.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+/*CSS NAVBAR PRINCIPAL*/
+/* Ocultar los elementos secundarios por defecto */
+.dropdown-menu {
+  display: none;
+  /* Aparecerá a la derecha del elemento padre */
+}
+
+/* Mostrar solo los elementos secundarios directos al hacer hover sobre los elementos primarios */
+.nav-item.dropdown:hover > .dropdown-menu {
   display: block;
 }
 
-/* Cambiar el color de la fuente y el fondo del enlace en el submenú al hacer hover */
-.dropdown-menu a:hover {
-  background-color: #aaa;
-  color: #fff; /* Puedes ajustar el color según tus preferencias */
-}
-
-/* Ocultar el submenú por defecto */
-.navbar-nav .nav-item .dropdown-menu {
-  display: none;
-}
-
-/* Posicionamiento del submenú */
-.dropdown-menu {
-  background-color: #2894d7;
+/* Mostrar los elementos secundarios directos al hacer hover sobre los elementos secundarios con la clase dropstart */
+.dropend:hover > .dropdown-menu {
+  display: block;
   position: absolute;
-  top: 100%; /* Ajusta la posición según sea necesario */
-  left: 0;
+  top: -9px;
+  left: 100%;
 }
+
+/* Mostrar los submenús debajo de su padre en dispositivos móviles */
+@media (max-width: 992px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    position: static; /* Eliminar la posición absoluta en dispositivos móviles */
+  }
+
+  .dropend:hover > .dropdown-menu {
+    display: block;
+    position: static; /* Eliminar la posición absoluta en dispositivos móviles */
+  }
+  
 
 /* SECCIÓN DIRECTORIO */
 

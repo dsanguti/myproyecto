@@ -18,29 +18,33 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown mx-2">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Formación
+                                    Oficina
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Becas</a></li>
+                                    <li><a class="dropdown-item" href="#">opcion1</a></li>
                             </li>
                         </ul>
                         </li>
                         <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Prestaciones
+                            <a class="nav-link dropdown-toggle" data-bs-auto-close="outside" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dir.Provincial
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item submenu-prestaciones" href="#/prestaciones/sanciones">Sanciones</a>
-
+                                <li class="dropend">
+                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#/prestaciones">Prestaciones</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#/prestaciones/sanciones" class="dropdown-item">Sanciones</a></li>
+                                        <li><a href="#/prestaciones/recl.previas" class="dropdown-item">Recl.Previas</a>
+                                        </li>
+                                        <li><a href="#/prestaciones/demandas" class="dropdown-item">Demandas</a></li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item submenu-prestaciones" href="#/prestaciones/recl.previas">Recl.Previas</a>
+                                <li class="dropend">
+                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#/formacion">Formación</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#/formacion/becas" class="dropdown-item">Becas</a></li>
 
-                                </li>
-                                <li>
-                                    <a class="dropdown-item submenu-prestaciones" href="#/prestaciones/demandas">Demandas</a>
-
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
