@@ -150,7 +150,7 @@ horizontalmente */
     display: block;
     position: static; /* Eliminar la posición absoluta en dispositivos móviles */
   }
-  
+}
 
 /* SECCIÓN DIRECTORIO */
 
