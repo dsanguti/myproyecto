@@ -15,7 +15,8 @@ if (!empty($_POST["btnlogin"])) {
             $_SESSION["apellido"] = $datos->apellido;
             $_SESSION["perfil"] = $datos->perfil;
             $_SESSION["directorio"] = $datos->directorio;
-            $_SESSION["inventario"] = $datos->inventario;
+            $_SESSION["sanciones"] = $datos->sanciones;
+
 
             header("location: http://localhost/myproyecto/");
         } else {

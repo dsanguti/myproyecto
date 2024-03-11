@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (miUrl === "http://localhost/myproyecto/#/inventario/DP") {
     Carga_Inventario();
     Carga_InventarioDP();
+  } else if (miUrl === "http://localhost/myproyecto/#/prestaciones/sanciones") {
+    Carga_Sanciones();
   }
 });
 

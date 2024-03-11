@@ -115,7 +115,7 @@ function Carga_Demandas() {
   xhttp.send();
 }
 
-// Se carga la sección de sanciones
+// Se carga la sección de sanciones de prestaciones
 
 function Carga_Sanciones() {
   var xhttp = new XMLHttpRequest();
@@ -124,7 +124,7 @@ function Carga_Sanciones() {
       document.getElementById("main").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "seccion/sanciones/sanciones.html", true);
+  xhttp.open("GET", "seccion/prestaciones/sanciones.php", true);
   xhttp.send();
 }
 
