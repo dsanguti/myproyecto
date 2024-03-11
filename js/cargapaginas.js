@@ -102,19 +102,6 @@ function Carga_InventarioCOE() {
   xhttp.send();
 }
 
-// Se carga la sección de demandas
-
-function Carga_Demandas() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("main").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "seccion/demandas/demandas.html", true);
-  xhttp.send();
-}
-
 // Se carga la sección de sanciones de prestaciones
 
 function Carga_Sanciones() {
@@ -124,7 +111,7 @@ function Carga_Sanciones() {
       document.getElementById("main").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "seccion/prestaciones/sanciones.php", true);
+  xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
   xhttp.send();
 }
 

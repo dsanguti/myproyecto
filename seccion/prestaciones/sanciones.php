@@ -22,17 +22,6 @@ session_start();
                     <?php
                     }
                     ?>
-
-                </div>
-
-                <div class="col-6 d-flex justify-content-end">
-                    <form class="d-flex flex-row" role="search">
-                        <div class="input-container-search">
-                            <input style="max-width:450px;" class="form-control me-2 input-dir-search" type="search" placeholder="Buscar sanciones" id="buscarSanciones" aria-label="Search">
-                            <i id="xSearchDir" class="bi bi-x-circle clear-search-dir icon-clear-dir" style="padding-right: 7px;" onclick="CerrarIconDirBuscar()"></i>
-                        </div>
-
-                    </form>
                 </div>
             </div>
         </div>
@@ -51,7 +40,7 @@ session_start();
                         <?php include_once('../../bd/dp_melilla/conector_BD_dp_melilla.php');
 
                         //Obtener el número total de registros 
-                        $result = $conn->query("SELECT * FROM directorio");
+                        $result = $conn->query("SELECT * FROM sanciones");
 
 
                         ?>

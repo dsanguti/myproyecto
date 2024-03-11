@@ -123,7 +123,7 @@ horizontalmente */
 /* Ocultar los elementos secundarios por defecto */
 .dropdown-menu {
   display: none;
-  text-align: center;
+
   /* Aparecerá a la derecha del elemento padre */
 }
 
