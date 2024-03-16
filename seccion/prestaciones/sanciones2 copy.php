@@ -56,87 +56,46 @@ session_start();
                                             <th style="display:none;" scope="col">id</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="estadoSancionesFilter">Estado</label><br>
-                                                <select name="estadoSancionesFilter" id="estadoSancionesFilter"
-                                                    class="form-select">
-                                                    <option selected>Seleccionar...</option>
-                                                    <option>RESUELTO</option>
-                                                    <option>PENDIENTE</option>
-                                                </select>
-
-                                            </th>
+                                                Estado</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="fechaListadoSancionesFilter">F.Listado</label><br>
-                                                <input type="date" name="fechaListadoSancionesFilter"
-                                                    class="form-select" id="fechaListadoSancionesFilter">
-                                            </th>
+                                                F.Listado</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="dniFilter">DNI/NIE</label><br>
-                                                <input type="text" class="form-control" id="dniFilter">
-                                            </th>
+                                                DNI/NIE</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="nombreFilter">Nombre</label><br>
-                                                <input type="text" class="form-control" id="nombreFilter">
-                                            </th>
+                                                Apellidos y Nombre</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="infraccionesSancionesFilter">Infracciones</label><br>
-                                                <select name="infracconesSancionesFilter"
-                                                    id="infracconesSancionesFilter" class="form-select">
-                                                    <option selected>Seleccionar...</option>
-                                                    <option>1ª</option>
-                                                    <option>2ª</option>
-                                                    <option>3ª</option>
-                                                </select>
-                                            </th>
+                                                Infr.Varias</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="tipoSancionFilter">Tipo Sanción</label><br>
-                                                <input type="text" class="form-control" id="tipoSancionFilter">
-                                            </th>
+                                                Tipo Sanción</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="fechaBajaFilter">F. Baja Sanción</label><br>
-                                                <input type="text" class="form-control" id="fechaBajaFilter">
-                                            </th>
+                                                F. Baja Sanción</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="fechaARBajaFilter">F. AR Baja</label><br>
-                                                <input type="text" class="form-control" id="fechaARBajaFilter">
-                                            </th>
+                                                F. AR Baja</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="fechaFinAlegacionesFilter">F. Fin Plazo Aleg.</label><br>
-                                                <input type="text" class="form-control" id="fechaFinAlegacionesFilter">
-                                            </th>
+                                                F. Fin Plazo Aleg.</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="naComunicacionFilter">NA Comunicación</label><br>
-                                                <input type="text" class="form-control" id="naComunicacionFilter">
-                                            </th>
+                                                NA Comunicación</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="sePuedeResolverFilter">Se puede Resolver</label><br>
-                                                <input type="text" class="form-control" id="sePuedeResolverFilter">
-                                            </th>
+                                                Se puede Resolver</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="estimadaFilter">Estimada</label><br>
-                                                <input type="text" class="form-control" id="estimadaFilter">
-                                            </th>
+                                                Estimada</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="controlNominaFilter">Control Nómina</label><br>
-                                                <input type="text" class="form-control" id="controlNominaFilter">
-                                            </th>
+                                                Control Nómina</th>
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
-                                                <label for="motivoFilter">Motivo</label><br>
-                                                <input type="text" class="form-control" id="motivoFilter">
-                                            </th>
+                                                Motivo</th>
 
 
                                             <?php
