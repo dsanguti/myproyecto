@@ -49,7 +49,7 @@ session_start();
                             ?>
 
                             <div class="table-responsive table-fixed">
-                                <table class="table table-striped table-hover" id="table-directorio">
+                                <table class="table table-striped table-hover" id="tabla_sanciones">
                                     <!-- Las cabeceras de la tabla directorio-->
                                     <thead style="position: sticky;top:0; font-size:14px;">
                                         <tr>
@@ -63,8 +63,8 @@ session_start();
                                                     <option>RESUELTO</option>
                                                     <option>PENDIENTE</option>
                                                 </select>
-
                                             </th>
+
                                             <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
                                                 scope="col">
                                                 <label for="fechaListadoSancionesFilter">F.Listado</label><br>
@@ -197,7 +197,7 @@ session_start();
                                     </thead>
                                     <tbody>
                                         <?php while ($row = $result->fetch_assoc()) : ?>
-                                        <tr class="celda_tabla_directorio">
+                                        <tr class="body_tabla_sanciones">
 
 
                                             <td style='display:none;'><?php echo $row['sancion_id'] ?></td>
