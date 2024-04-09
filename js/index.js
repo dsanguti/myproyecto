@@ -91,94 +91,39 @@ function CerrarIconDirBuscar() {
 
 //Función para los filtros de la Sanciones
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Obtener referencias a los elementos de filtro
-  var selects = document.querySelectorAll("select");
-  var inputs = document.querySelectorAll("input");
+let executeCodeSanciones = true; // Variable para controlar si se ejecuta el código
 
-  // Asignar un evento change a cada elemento de filtro
-  selects.forEach(function (select) {
-    select.addEventListener("change", filterData);
-  });
-  inputs.forEach(function (input) {
-    input.addEventListener("change", filterData);
-  });
+// Función para ejecutar el código
+function executeSearchCode() {
+  const EstadoSanciones = document.getElementById("estadoSancionesFilter");
 
-  function filterData() {
-    var estado = document.getElementById("estadoSancionesFilter").value;
-    var fechaListado = document.getElementById(
-      "fechaListadoSancionesFilter"
-    ).value;
-    var dni = document.getElementById("dniFilter").value;
-    var nombre = document.getElementById("nombreFilter").value;
-    var infracciones = document.getElementById(
-      "infracconesSancionesFilter"
-    ).value;
-    var tipoSancion = document.getElementById("tipoSancionFilter").value;
-    var fechaBajaSancion = document.getElementById(
-      "fechaBajaSancionFilter"
-    ).value;
-    var fechaARBaja = document.getElementById("fechaARBajaFilter").value;
-    var fechaFinAlegaciones = document.getElementById(
-      "fechaFinAlegacionesFilter"
-    ).value;
-    var naComunicacion = document.getElementById("naComunicacionFilter").value;
-    var sePuedeResolver = document.getElementById(
-      "sePuedeResolverFilter"
-    ).value;
-    var estimada = document.getElementById("estimadaFilter").value;
-    var controlNomina = document.getElementById("controlNominaFilter").value;
-    var motivo = document.getElementById("motivoFilter").value;
+  if (buscarDirectorio.value.trim() === "") {
+    iconXdir.classList.add("icon-clear-dir");
+  } else {
+    iconXdir.classList.remove("icon-clear-dir");
+  }
 
-    // Crear el objeto XMLHttpRequest
-    var xhr = new XMLHttpRequest();
+  if (EstadoSanciones.value !== "") {
+    document.querySelectorAll(".celda_tabla_directorio").forEach((celda) => {
+      celda.textContent
+        .toLocaleLowerCase()
+        .includes(buscarDirectorio.value.toLocaleLowerCase())
+        ? celda.classList.remove("filtro_directorio")
+        : celda.classList.add("filtro_directorio");
+    });
+  }
+}
 
-    // Configurar la solicitud
-    xhr.open("POST", "/seccion/prestaciones/filtro_sanciones.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    // Manejar la respuesta
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          document.getElementById("body_tabla_sanciones").innerHTML =
-            xhr.responseText;
-        } else {
-          console.error("Error en la solicitud.");
-        }
+// Evento keyup solo cuando executeCode sea true
+document.addEventListener("keyup", (e) => {
+  if (executeCodeSanciones) {
+    if (e.target.matches("#buscarDirectorio")) {
+      if (e.key === "Escape") {
+        e.target.value = "";
+        executeSearchCode(); // Llama a la función para limpiar y filtrar
+      } else {
+        executeSearchCode(); // Llama a la función para filtrar
       }
-    };
-
-    // Enviar la solicitud con los datos de filtro
-    xhr.send(
-      "estado=" +
-        estado +
-        "&fechaListado=" +
-        fechaListado +
-        "&dni=" +
-        dni +
-        "&nombre=" +
-        nombre +
-        "&infracciones=" +
-        infracciones +
-        "&tipoSancion=" +
-        tipoSancion +
-        "&fechaBajaSancion=" +
-        fechaBajaSancion +
-        "&fechaARBaja=" +
-        fechaARBaja +
-        "&fechaFinAlegaciones=" +
-        fechaFinAlegaciones +
-        "&naComunicacion=" +
-        naComunicacion +
-        "&sePuedeResolver=" +
-        sePuedeResolver +
-        "&estimada=" +
-        estimada +
-        "&controlNomina=" +
-        controlNomina +
-        "&motivo=" +
-        motivo
-    );
+    }
   }
 });
