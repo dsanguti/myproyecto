@@ -91,94 +91,79 @@ function CerrarIconDirBuscar() {
 
 //Función para los filtros de la Sanciones
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Obtener referencias a los elementos de filtro
-  var selects = document.querySelectorAll("select");
-  var inputs = document.querySelectorAll("input");
+// Empecemos buscando por DNI/NIE con funcion buscar
 
-  // Asignar un evento change a cada elemento de filtro
-  selects.forEach(function (select) {
-    select.addEventListener("change", filterData);
-  });
-  inputs.forEach(function (input) {
-    input.addEventListener("change", filterData);
-  });
+// Función para ejecutar la búsqueda cuando se escriba en el campo dni/nie
+// Función para ejecutar la búsqueda por DNI/NIE
+function executeSearchCodeSanciones() {
+  const buscarDniSanciones = document.getElementById("dniFilter");
 
-  function filterData() {
-    var estado = document.getElementById("estadoSancionesFilter").value;
-    var fechaListado = document.getElementById(
-      "fechaListadoSancionesFilter"
-    ).value;
-    var dni = document.getElementById("dniFilter").value;
-    var nombre = document.getElementById("nombreFilter").value;
-    var infracciones = document.getElementById(
-      "infracconesSancionesFilter"
-    ).value;
-    var tipoSancion = document.getElementById("tipoSancionFilter").value;
-    var fechaBajaSancion = document.getElementById(
-      "fechaBajaSancionFilter"
-    ).value;
-    var fechaARBaja = document.getElementById("fechaARBajaFilter").value;
-    var fechaFinAlegaciones = document.getElementById(
-      "fechaFinAlegacionesFilter"
-    ).value;
-    var naComunicacion = document.getElementById("naComunicacionFilter").value;
-    var sePuedeResolver = document.getElementById(
-      "sePuedeResolverFilter"
-    ).value;
-    var estimada = document.getElementById("estimadaFilter").value;
-    var controlNomina = document.getElementById("controlNominaFilter").value;
-    var motivo = document.getElementById("motivoFilter").value;
+  if (buscarDniSanciones) {
+    const filtroDni = buscarDniSanciones.value.trim().toLowerCase();
 
-    // Crear el objeto XMLHttpRequest
-    var xhr = new XMLHttpRequest();
+    document
+      .querySelectorAll(".celda_tabla_sanciones td:nth-child(5)")
+      .forEach((celda) => {
+        const dni = celda.textContent.trim().toLowerCase();
+        const fila = celda.parentNode;
 
-    // Configurar la solicitud
-    xhr.open("POST", "/seccion/prestaciones/filtro_sanciones.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // Eliminar cualquier filtro previo
+        fila.classList.remove("filtro_directorio");
 
-    // Manejar la respuesta
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          document.getElementById("body_tabla_sanciones").innerHTML =
-            xhr.responseText;
+        // Aplicar nuevo filtro
+        if (filtroDni && dni.includes(filtroDni)) {
+          fila.classList.remove("filtro_directorio");
         } else {
-          console.error("Error en la solicitud.");
+          fila.classList.add("filtro_directorio");
         }
-      }
-    };
-
-    // Enviar la solicitud con los datos de filtro
-    xhr.send(
-      "estado=" +
-        estado +
-        "&fechaListado=" +
-        fechaListado +
-        "&dni=" +
-        dni +
-        "&nombre=" +
-        nombre +
-        "&infracciones=" +
-        infracciones +
-        "&tipoSancion=" +
-        tipoSancion +
-        "&fechaBajaSancion=" +
-        fechaBajaSancion +
-        "&fechaARBaja=" +
-        fechaARBaja +
-        "&fechaFinAlegaciones=" +
-        fechaFinAlegaciones +
-        "&naComunicacion=" +
-        naComunicacion +
-        "&sePuedeResolver=" +
-        sePuedeResolver +
-        "&estimada=" +
-        estimada +
-        "&controlNomina=" +
-        controlNomina +
-        "&motivo=" +
-        motivo
+      });
+  } else {
+    console.error(
+      "El campo de búsqueda de DNI/NIE no se encontró en el documento."
     );
+  }
+}
+
+// Función para ejecutar la búsqueda por nombre
+function executeSearchByName() {
+  const buscarNombre = document.getElementById("nombreFilter");
+
+  if (buscarNombre) {
+    const filtroNombre = buscarNombre.value.trim().toLowerCase();
+
+    document
+      .querySelectorAll(".celda_tabla_sanciones td:nth-child(6)")
+      .forEach((celda) => {
+        const nombre = celda.textContent.trim().toLowerCase();
+        const fila = celda.parentNode;
+
+        // Eliminar cualquier filtro previo
+        fila.classList.remove("filtro_directorio");
+
+        // Aplicar nuevo filtro
+        if (filtroNombre && nombre.includes(filtroNombre)) {
+          fila.classList.remove("filtro_directorio");
+        } else {
+          fila.classList.add("filtro_directorio");
+        }
+      });
+  } else {
+    console.error(
+      "El campo de búsqueda de nombre no se encontró en el documento."
+    );
+  }
+}
+
+// Adjuntar evento keyup al campo de búsqueda DNI/NIE
+document.addEventListener("keyup", (e) => {
+  if (e.target.matches("#dniFilter")) {
+    executeSearchCodeSanciones(); // Llama a la función para filtrar por DNI/NIE
+  }
+});
+
+// Adjuntar evento keyup al campo de búsqueda nombreFilter
+document.addEventListener("keyup", (e) => {
+  if (e.target.matches("#nombreFilter")) {
+    executeSearchByName(); // Llama a la función para filtrar por nombre
   }
 });
