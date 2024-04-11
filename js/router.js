@@ -19,6 +19,7 @@ const Router = () => {
   } else if (hash == "#/inventario/COE") {
     Carga_InventarioCOE();
   } else if (hash == "#/prestaciones/sanciones") {
+    Carga_LoaderSanciones();
     Carga_Sanciones();
   }
 };

@@ -1,5 +1,7 @@
 <?php session_start(); ?>
 <div class="container-fluid p-0">
+
+
     <div class="row">
         <div class="col mt-4 mb-4">
             <h2 class="titulo_seccion" style="text-align:center;">Sanciones de prestaciones</h2>
@@ -10,6 +12,8 @@
             <div style="padding-left:15px; padding-right:10px;" class="container-fluid">
                 <div class="row">
                     <div class="col">
+
+
                         <!-- Se realiza la conexión con la base de datos Directorio -->
                         <?php include_once('../../bd/dp_melilla/conector_BD_dp_melilla.php'); ?>
                         <div id="tabla_directorio">
@@ -19,7 +23,7 @@
                             $totalRegistros = $totalRegistrosQuery->fetch_assoc()['totalRegistros'];
 
                             // Definir el tamaño de bloque
-                            $tamanoBloque = 500;
+                            $tamanoBloque = 400;
 
                             // Calcular el número de bloques necesarios
                             $numBloques = ceil($totalRegistros / $tamanoBloque);

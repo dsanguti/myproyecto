@@ -115,34 +115,49 @@ function Carga_InventarioCOE() {
 //   xhttp.send();
 // }
 
+function Carga_LoaderSanciones() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("main").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open(
+    "GET",
+    "../myproyecto/seccion/prestaciones/loader_sanciones.php",
+    true
+  );
+  xhttp.send();
+}
+
 function Carga_Sanciones() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      // Ocultar el loader si existe
+      var loader = document.getElementById("loaderSanciones");
+      if (loader) {
+        loader.style.display = "none";
+      }
+
+      // Limpiar el contenido actual del elemento main
+      document.getElementById("main").innerHTML = "";
+
       // Dividir la respuesta en partes más pequeñas
       let partes = this.responseText.split("<!-- SPLIT -->");
 
       // Mostrar progresivamente las partes
-      mostrarPartes(partes, 0);
+      mostrarPartes(partes);
     }
   };
   xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
   xhttp.send();
 }
 
-function mostrarPartes(partes, indice) {
-  // Crear un fragmento de documento para almacenar las partes del contenido
-  var fragmento = document.createDocumentFragment();
-
-  // Agregar todas las partes al fragmento
-  for (var i = indice; i < partes.length; i++) {
-    var div = document.createElement("div");
-    div.innerHTML = partes[i];
-    fragmento.appendChild(div);
-  }
-
-  // Agregar el fragmento al contenido principal
-  document.getElementById("main").appendChild(fragmento);
+function mostrarPartes(partes) {
+  partes.forEach(function (parte) {
+    document.getElementById("main").insertAdjacentHTML("afterbegin", parte);
+  });
 }
 
 // Se carga la sección de planes
