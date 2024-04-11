@@ -89,12 +89,8 @@ function CerrarIconDirBuscar() {
   });
 }
 
-//Función para los filtros de la Sanciones
-
-// Empecemos buscando por DNI/NIE con funcion buscar
-
-// Función para ejecutar la búsqueda cuando se escriba en el campo dni/nie
 // Función para ejecutar la búsqueda por DNI/NIE
+
 function executeSearchCodeSanciones() {
   const buscarDniSanciones = document.getElementById("dniFilter");
 
@@ -122,9 +118,17 @@ function executeSearchCodeSanciones() {
       "El campo de búsqueda de DNI/NIE no se encontró en el documento."
     );
   }
+
+  // Si el campo de búsqueda está vacío, mostrar todas las filas
+  if (!buscarDniSanciones.value) {
+    document.querySelectorAll(".celda_tabla_sanciones").forEach((fila) => {
+      fila.classList.remove("filtro_directorio");
+    });
+  }
 }
 
 // Función para ejecutar la búsqueda por nombre
+
 function executeSearchByName() {
   const buscarNombre = document.getElementById("nombreFilter");
 
@@ -152,6 +156,13 @@ function executeSearchByName() {
       "El campo de búsqueda de nombre no se encontró en el documento."
     );
   }
+
+  // Si el campo de búsqueda está vacío, mostrar todas las filas
+  if (!buscarNombre.value) {
+    document.querySelectorAll(".celda_tabla_sanciones").forEach((fila) => {
+      fila.classList.remove("filtro_directorio");
+    });
+  }
 }
 
 // Adjuntar evento keyup al campo de búsqueda DNI/NIE
@@ -166,4 +177,51 @@ document.addEventListener("keyup", (e) => {
   if (e.target.matches("#nombreFilter")) {
     executeSearchByName(); // Llama a la función para filtrar por nombre
   }
+});
+
+// Función para ejecutar la búsqueda por estado
+function executeSearchByState() {
+  const estadoFilter = document.getElementById("estadoSancionesFilter");
+
+  if (estadoFilter) {
+    const filtroEstado = estadoFilter.value;
+
+    document
+      .querySelectorAll(".celda_tabla_sanciones td:nth-child(2)")
+      .forEach((celda) => {
+        const fila = celda.parentNode;
+
+        if (filtroEstado === "Todos") {
+          fila.classList.remove("filtro_directorio");
+        } else {
+          const estado = celda.textContent.trim();
+          if (estado !== filtroEstado) {
+            fila.classList.add("filtro_directorio");
+          } else {
+            fila.classList.remove("filtro_directorio");
+          }
+        }
+      });
+  } else {
+    console.error(
+      "El campo de filtro de estado no se encontró en el documento."
+    );
+  }
+}
+
+// Esperar a que el DOM esté completamente cargado antes de ejecutar el código
+document.addEventListener("DOMContentLoaded", function () {
+  // Adjuntar evento change al campo de filtro de estado
+  const estadoFilter = document.getElementById("estadoSancionesFilter");
+  if (estadoFilter) {
+    console.log("El campo de filtro de estado se encontró en el documento.");
+    estadoFilter.addEventListener("change", executeSearchByState);
+  } else {
+    console.error(
+      "El campo de filtro de estado no se encontró en el documento."
+    );
+  }
+
+  // Ejecutar la búsqueda inicial por estado
+  executeSearchByState();
 });

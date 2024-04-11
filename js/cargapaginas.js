@@ -104,15 +104,45 @@ function Carga_InventarioCOE() {
 
 // Se carga la sección de sanciones de prestaciones
 
+// function Carga_Sanciones() {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function () {
+//     if (this.readyState == 4 && this.status == 200) {
+//       document.getElementById("main").innerHTML = this.responseText;
+//     }
+//   };
+//   xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
+//   xhttp.send();
+// }
+
 function Carga_Sanciones() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("main").innerHTML = this.responseText;
+      // Dividir la respuesta en partes más pequeñas
+      let partes = this.responseText.split("<!-- SPLIT -->");
+
+      // Mostrar progresivamente las partes
+      mostrarPartes(partes, 0);
     }
   };
   xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
   xhttp.send();
+}
+
+function mostrarPartes(partes, indice) {
+  // Crear un fragmento de documento para almacenar las partes del contenido
+  var fragmento = document.createDocumentFragment();
+
+  // Agregar todas las partes al fragmento
+  for (var i = indice; i < partes.length; i++) {
+    var div = document.createElement("div");
+    div.innerHTML = partes[i];
+    fragmento.appendChild(div);
+  }
+
+  // Agregar el fragmento al contenido principal
+  document.getElementById("main").appendChild(fragmento);
 }
 
 // Se carga la sección de planes
