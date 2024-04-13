@@ -26,7 +26,7 @@ session_start();
                             $result = $conn->query("SELECT p.APELLIDOSNOMBRE, p.NIFDNI,p.persona_id, s.*
                             FROM personas p
                             JOIN sanciones s ON p.persona_id = s.persona_id;");
- LIMIT $inicioBloque, $tamanoBloque";
+
 
 
                             ?>
@@ -38,117 +38,85 @@ session_start();
                                     <thead style="position: sticky;top:0; font-size:14px;">
                                         <tr>
                                             <th style="display:none;" scope="col">id</th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="estadoSancionesFilter">Estado</label><br>
-                                                <select style="font-size:14px;" name="estadoSancionesFilter"
-                                                    id="estadoSancionesFilter" class="form-select">
+                                                <select style="font-size:14px;" name="estadoSancionesFilter" id="estadoSancionesFilter" class="form-select">
                                                     <option selected></option>
                                                     <option>RESUELTO</option>
                                                     <option>PENDIENTE</option>
                                                 </select>
                                             </th>
 
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="fechaListadoSancionesFilter">F.Listado</label><br>
-                                                <input style="width:147px; font-size: 14px;" type="date"
-                                                    name="fechaListadoSancionesFilter" class="form-select"
-                                                    id="fechaListadoSancionesFilter">
+                                                <input style="width:147px; font-size: 14px;" type="date" name="fechaListadoSancionesFilter" class="form-select" id="fechaListadoSancionesFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="dniFilter">DNI/NIE</label><br>
-                                                <input style="font-size:14px;" type="search" class="form-control"
-                                                    id="dniFilter" aria-label="Search">
+                                                <input style="font-size:14px;" type="search" class="form-control" id="dniFilter" aria-label="Search">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="nombreFilter">Nombre</label><br>
-                                                <input style="font-size:14px;" type="text" class="form-control"
-                                                    id="nombreFilter">
+                                                <input style="font-size:14px;" type="text" class="form-control" id="nombreFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="infraccionesSancionesFilter">Infr.</label><br>
-                                                <select style="font-size:14px;width:65px;"
-                                                    name="infracconesSancionesFilter" id="infracconesSancionesFilter"
-                                                    class="form-select">
+                                                <select style="font-size:14px;width:65px;" name="infracconesSancionesFilter" id="infracconesSancionesFilter" class="form-select">
                                                     <option selected></option>
                                                     <option>1ª</option>
                                                     <option>2ª</option>
                                                     <option>3ª</option>
                                                 </select>
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="tipoSancionFilter">T.Sanc.</label><br>
-                                                <select style="font-size:14px;" name="tipoSancionFilter"
-                                                    id="tipoSancionFilter" class="form-select">
+                                                <select style="font-size:14px;" name="tipoSancionFilter" id="tipoSancionFilter" class="form-select">
                                                     <option selected></option>
                                                     <option>LEVE</option>
                                                     <option>GRAVE</option>
                                                     <option>MUY GRAVE</option>
                                                 </select>
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="fechaBajaFilter">F. Baja Sanción</label><br>
-                                                <input style="width:147px; font-size: 14px;" type="date"
-                                                    name="fechaBajaSancionFilter" class="form-select"
-                                                    id="fechaBajaSancionFilter">
+                                                <input style="width:147px; font-size: 14px;" type="date" name="fechaBajaSancionFilter" class="form-select" id="fechaBajaSancionFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="fechaARBajaFilter">F. AR Baja</label><br>
-                                                <input style="width:147px; font-size: 14px;" type="date"
-                                                    name="fechaBajaFilter" class="form-select" id="fechaBajaFilter">
+                                                <input style="width:147px; font-size: 14px;" type="date" name="fechaBajaFilter" class="form-select" id="fechaBajaFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="fechaFinAlegacionesFilter">F. Fin Plazo
                                                     Aleg.</label><br>
-                                                <input style="width:147px; font-size: 14px;" type="date"
-                                                    name="fechaARBajaFilter" class="form-select" id="fechaARBajaFilter">
+                                                <input style="width:147px; font-size: 14px;" type="date" name="fechaARBajaFilter" class="form-select" id="fechaARBajaFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="naComunicacionFilter">NA Comunicación</label><br>
-                                                <input style="font-size:14px;" type="text" class="form-control"
-                                                    id="naComunicacionFilter">
+                                                <input style="font-size:14px;" type="text" class="form-control" id="naComunicacionFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="sePuedeResolverFilter">Se puede Resolver</label><br>
-                                                <input style="width:147px; font-size: 14px;" type="date"
-                                                    name="sePuedeResolverFilter" class="form-select"
-                                                    id="sePuedeResolverFilter">
+                                                <input style="width:147px; font-size: 14px;" type="date" name="sePuedeResolverFilter" class="form-select" id="sePuedeResolverFilter">
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="estimadaFilter">Estimada</label><br>
-                                                <select style="font-size:14px;width:65px;" name="estimadaFilter"
-                                                    id="estimadaFilter" class="form-select">
+                                                <select style="font-size:14px;width:65px;" name="estimadaFilter" id="estimadaFilter" class="form-select">
                                                     <option selected></option>
                                                     <option>SI</option>
                                                     <option>NO</option>
                                                 </select>
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="controlNominaFilter">C.Nom</label><br>
-                                                <select style="font-size:14px;width:65px;" name="controlNominaFilter"
-                                                    id="controlNominaFilter" class="form-select">
+                                                <select style="font-size:14px;width:65px;" name="controlNominaFilter" id="controlNominaFilter" class="form-select">
                                                     <option selected></option>
                                                     <option>LISTO</option>
                                                     <option>POR VER</option>
                                                 </select>
                                             </th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                scope="col">
+                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                 <label for="motivoFilter">Motivo</label><br>
-                                                <select style="font-size:14px;" name="motivoFilter" id="motivoFilter"
-                                                    class="form-select">
+                                                <select style="font-size:14px;" name="motivoFilter" id="motivoFilter" class="form-select">
                                                     <option selected></option>
                                                     <option>NO COMPARENCIA A REQUERIMIENTO DEL SEPE.</option>
                                                     <option>INCUMPLIMIENTO DE COMPROMISO ACTIVIDAD</option>
@@ -171,10 +139,8 @@ session_start();
                                             <?php
                                             if ($_SESSION["sanciones"] === "editar") {
                                             ?>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:orange;"
-                                                scope="col">Edit</th>
-                                            <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:red;"
-                                                scope="col">Del</th>
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:orange;" scope="col">Edit</th>
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:red;" scope="col">Del</th>
                                             <?php
                                             }
                                             ?>
@@ -183,119 +149,85 @@ session_start();
                                         <thead style="position: sticky;top:0; font-size:14px;">
                                             <tr>
                                                 <th style="display:none;" scope="col">id</th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="estadoSancionesFilter">Estado</label><br>
-                                                    <select style="font-size:14px;" name="estadoSancionesFilter"
-                                                        id="estadoSancionesFilter" class="form-select">
+                                                    <select style="font-size:14px;" name="estadoSancionesFilter" id="estadoSancionesFilter" class="form-select">
                                                         <option selected></option>
                                                         <option>RESUELTO</option>
                                                         <option>PENDIENTE</option>
                                                     </select>
                                                 </th>
 
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="fechaListadoSancionesFilter">F.Listado</label><br>
-                                                    <input style="width:147px; font-size: 14px;" type="date"
-                                                        name="fechaListadoSancionesFilter" class="form-select"
-                                                        id="fechaListadoSancionesFilter">
+                                                    <input style="width:147px; font-size: 14px;" type="date" name="fechaListadoSancionesFilter" class="form-select" id="fechaListadoSancionesFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="dniFilter">DNI/NIE</label><br>
-                                                    <input style="font-size:14px;" type="search" class="form-control"
-                                                        id="dniFilter" aria-label="Search">
+                                                    <input style="font-size:14px;" type="search" class="form-control" id="dniFilter" aria-label="Search">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="nombreFilter">Nombre</label><br>
-                                                    <input style="font-size:14px;" type="text" class="form-control"
-                                                        id="nombreFilter">
+                                                    <input style="font-size:14px;" type="text" class="form-control" id="nombreFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="infraccionesSancionesFilter">Infr.</label><br>
-                                                    <select style="font-size:14px;width:65px;"
-                                                        name="infracconesSancionesFilter"
-                                                        id="infracconesSancionesFilter" class="form-select">
+                                                    <select style="font-size:14px;width:65px;" name="infracconesSancionesFilter" id="infracconesSancionesFilter" class="form-select">
                                                         <option selected></option>
                                                         <option>1ª</option>
                                                         <option>2ª</option>
                                                         <option>3ª</option>
                                                     </select>
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="tipoSancionFilter">T.Sanc.</label><br>
-                                                    <select style="font-size:14px;" name="tipoSancionFilter"
-                                                        id="tipoSancionFilter" class="form-select">
+                                                    <select style="font-size:14px;" name="tipoSancionFilter" id="tipoSancionFilter" class="form-select">
                                                         <option selected></option>
                                                         <option>LEVE</option>
                                                         <option>GRAVE</option>
                                                         <option>MUY GRAVE</option>
                                                     </select>
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="fechaBajaFilter">F. Baja Sanción</label><br>
-                                                    <input style="width:147px; font-size: 14px;" type="date"
-                                                        name="fechaBajaSancionFilter" class="form-select"
-                                                        id="fechaBajaSancionFilter">
+                                                    <input style="width:147px; font-size: 14px;" type="date" name="fechaBajaSancionFilter" class="form-select" id="fechaBajaSancionFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="fechaARBajaFilter">F. AR Baja</label><br>
-                                                    <input style="width:147px; font-size: 14px;" type="date"
-                                                        name="fechaBajaFilter" class="form-select" id="fechaBajaFilter">
+                                                    <input style="width:147px; font-size: 14px;" type="date" name="fechaBajaFilter" class="form-select" id="fechaBajaFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="fechaFinAlegacionesFilter">F. Fin Plazo
                                                         Aleg.</label><br>
-                                                    <input style="width:147px; font-size: 14px;" type="date"
-                                                        name="fechaARBajaFilter" class="form-select"
-                                                        id="fechaARBajaFilter">
+                                                    <input style="width:147px; font-size: 14px;" type="date" name="fechaARBajaFilter" class="form-select" id="fechaARBajaFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="naComunicacionFilter">NA Comunicación</label><br>
-                                                    <input style="font-size:14px;" type="text" class="form-control"
-                                                        id="naComunicacionFilter">
+                                                    <input style="font-size:14px;" type="text" class="form-control" id="naComunicacionFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="sePuedeResolverFilter">Se puede Resolver</label><br>
-                                                    <input style="width:147px; font-size: 14px;" type="date"
-                                                        name="sePuedeResolverFilter" class="form-select"
-                                                        id="sePuedeResolverFilter">
+                                                    <input style="width:147px; font-size: 14px;" type="date" name="sePuedeResolverFilter" class="form-select" id="sePuedeResolverFilter">
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="estimadaFilter">Estimada</label><br>
-                                                    <select style="font-size:14px;width:65px;" name="estimadaFilter"
-                                                        id="estimadaFilter" class="form-select">
+                                                    <select style="font-size:14px;width:65px;" name="estimadaFilter" id="estimadaFilter" class="form-select">
                                                         <option selected></option>
                                                         <option>SI</option>
                                                         <option>NO</option>
                                                     </select>
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="controlNominaFilter">C.Nom</label><br>
-                                                    <select style="font-size:14px;width:65px;"
-                                                        name="controlNominaFilter" id="controlNominaFilter"
-                                                        class="form-select">
+                                                    <select style="font-size:14px;width:65px;" name="controlNominaFilter" id="controlNominaFilter" class="form-select">
                                                         <option selected></option>
                                                         <option>LISTO</option>
                                                         <option>POR VER</option>
                                                     </select>
                                                 </th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;"
-                                                    scope="col">
+                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;" scope="col">
                                                     <label for="motivoFilter">Motivo</label><br>
-                                                    <select style="font-size:14px;" name="motivoFilter"
-                                                        id="motivoFilter" class="form-select">
+                                                    <select style="font-size:14px;" name="motivoFilter" id="motivoFilter" class="form-select">
                                                         <option selected></option>
                                                         <option>NO COMPARENCIA A REQUERIMIENTO DEL SEPE.</option>
                                                         <option>INCUMPLIMIENTO DE COMPROMISO ACTIVIDAD</option>
@@ -316,91 +248,84 @@ session_start();
 
 
                                                 <?php
-                                            if ($_SESSION["sanciones"] === "editar") {
-                                            ?>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:orange;"
-                                                    scope="col">Edit</th>
-                                                <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:red;"
-                                                    scope="col">Del</th>
+                                                if ($_SESSION["sanciones"] === "editar") {
+                                                ?>
+                                                    <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:orange;" scope="col">Edit</th>
+                                                    <th style="background-color:#0f6ba5;color: #fff;text-align:center;color:red;" scope="col">Del</th>
                                                 <?php
-                                            }
-                                            ?>
+                                                }
+                                                ?>
 
                                             </tr>
                                         </thead>
                                     <tbody>
                                         <?php while ($row = $result->fetch_assoc()) : ?>
-                                        <tr class="body_tabla_sanciones celda_tabla_sanciones">
+                                            <tr class="body_tabla_sanciones celda_tabla_sanciones">
 
 
-                                            <td style='display:none;'><?php echo $row['sancion_id'] ?></td>
-                                            <td style='display:none;'><?php echo $row['persona_id'] ?>
-                                            </td>
-                                            <td style='text-align:center; font-size: 14px;'>
-                                                <?php echo $row['ts_idEstado'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_fecha_real_baja'])); ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['NIFDNI'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['APELLIDOSNOMBRE'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_varias_infracciones'] ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_tipo_sancion'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_fecha_listado'])) ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_ar_baja'])) ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_fin_plazo_alegar'])) ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_na_comunicacion'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_se_puede_resolver'])) ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_estimada'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_control_nomina'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_motivo'] ?>
-                                            </td>
-                                            <?php
+                                                <td style='display:none;'><?php echo $row['sancion_id'] ?></td>
+                                                <td style='display:none;'><?php echo $row['persona_id'] ?>
+                                                </td>
+                                                <td style='text-align:center; font-size: 14px;'>
+                                                    <?php echo $row['ts_idEstado'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo date('d/m/y', strtotime($row['ts_fecha_real_baja'])); ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['NIFDNI'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['APELLIDOSNOMBRE'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['ts_varias_infracciones'] ?></td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['ts_tipo_sancion'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo date('d/m/y', strtotime($row['ts_fecha_listado'])) ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo date('d/m/y', strtotime($row['ts_ar_baja'])) ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo date('d/m/y', strtotime($row['ts_fin_plazo_alegar'])) ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['ts_na_comunicacion'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo date('d/m/y', strtotime($row['ts_se_puede_resolver'])) ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['ts_estimada'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['ts_control_nomina'] ?>
+                                                </td>
+                                                <td style='text-align:center;font-size: 14px;'>
+                                                    <?php echo $row['ts_motivo'] ?>
+                                                </td>
+                                                <?php
 
                                                 if ($_SESSION["sanciones"] === "editar") {
                                                 ?>
-                                            <td style='text-align:center;'> <button id='btn-edit-directorio'
-                                                    class='edit-table' data-bs-toggle='modal'
-                                                    data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
-                                                    <i class='bi bi-pencil-square'></i></button>
-                                            <td style='text-align:center;'> <button id='btn-del-directorio'
-                                                    class='del-table' data-bs-toggle='modal'
-                                                    data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
-                                                        class='bi bi-trash'></i></button>
-                                                <!-- El modal de editar-->
-                                                <?php include("./modal/modal_editar.php"); ?>
+                                                    <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                                            <i class='bi bi-pencil-square'></i></button>
+                                                    <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i class='bi bi-trash'></i></button>
+                                                        <!-- El modal de editar-->
+                                                        <?php include("./modal/modal_editar.php"); ?>
 
-                                                <!-- El modal de Eliminar-->
-                                                <?php include("./modal/modal_eliminar.php");
+                                                        <!-- El modal de Eliminar-->
+                                                        <?php include("./modal/modal_eliminar.php");
                                                         ?>
 
-                                                <?php
+                                                    <?php
                                                 }
                                                     ?>
 
-                                        </tr>
+                                            </tr>
 
                                         <?php endwhile; ?>
 

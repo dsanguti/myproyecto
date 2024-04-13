@@ -186,78 +186,7 @@ session_start();
 
                                     </thead>
                                     <tbody>
-                                        <!--Iterar sobre los bloques y cargarlos en la tabla-->
-                                        <?php for ($i = 0; $i < $numBloques; $i++) {
-                                    // Calcular el inicio del bloque actual
-                                    $inicioBloque = $i * $tamanoBloque;
-                                    // Consulta para obtener los registros del bloque
-                                    $sql = "SELECT p.APELLIDOSNOMBRE, p.NIFDNI, p.persona_id, s.*
-                                        FROM personas p
-                                        JOIN sanciones s ON p.persona_id = s.persona_id
-                                        LIMIT $inicioBloque, $tamanoBloque";
-                                    // Ejecutar la consulta 
-                                    $result = $conn->query($sql);
-                                    // Mostrar los resultados en la tabla
-                                    while ($row = $result->fetch_assoc()) :
-                                ?>
-                                        <tr class="body_tabla_sanciones celda_tabla_sanciones">
-                                            <td style='display:none;'><?php echo $row['sancion_id'] ?></td>
-                                            <td style='display:none;'><?php echo $row['persona_id'] ?></td>
-                                            <td style='text-align:center; font-size: 14px;'>
-                                                <?php echo $row['ts_idEstado'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_fecha_real_baja'])); ?></td>
-                                            <td style='text-align:center;font-size: 14px;'><?php echo $row['NIFDNI'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['APELLIDOSNOMBRE'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_varias_infracciones'] ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_tipo_sancion'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_fecha_listado'])) ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_ar_baja'])) ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_fin_plazo_alegar'])) ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_na_comunicacion'] ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo date('d/m/y', strtotime($row['ts_se_puede_resolver'])) ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_estimada'] ?>
-                                            </td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_control_nomina'] ?></td>
-                                            <td style='text-align:center;font-size: 14px;'>
-                                                <?php echo $row['ts_motivo'] ?></td>
-                                            <?php
-                                            if ($_SESSION["sanciones"] === "editar") {
-                                            ?>
-                                            <td style='text-align:center;'> <button id='btn-edit-directorio'
-                                                    class='edit-table' data-bs-toggle='modal'
-                                                    data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'><i
-                                                        class='bi bi-pencil-square'></i></button>
-                                            <td style='text-align:center;'> <button id='btn-del-directorio'
-                                                    class='del-table' data-bs-toggle='modal'
-                                                    data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i
-                                                        class='bi bi-trash'></i></button>
-                                                <!-- El modal de editar-->
-                                                <?php include("./modal/modal_editar.php"); ?>
-                                                <!-- El modal de Eliminar-->
-                                                <?php include("./modal/modal_eliminar.php"); ?>
-                                                <?php
-                                            }
-                                                ?>
 
-                                        </tr>
-                                        <?php endwhile;
-                                } ?>
 
                                     </tbody>
 
