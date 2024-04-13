@@ -150,7 +150,7 @@ function Carga_Sanciones() {
       mostrarPartes(partes);
     }
   };
-  xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
+  xhttp.open("GET", "/myproyecto/seccion/prestaciones/sanciones2.php", true);
   xhttp.send();
 }
 

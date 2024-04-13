@@ -181,3 +181,86 @@ document.addEventListener("keyup", (e) => {
 });
 
 // Esperar a que el DOM esté completamente cargado antes de ejecutar el código
+//funciones para filtrado multiple en sanciones
+
+console.log("hola me lees???");
+// Función para ejecutar la búsqueda por estado
+function executeSearchByState() {
+  const estadoFilter = document.getElementById("estadoSancionesFilter");
+
+  if (estadoFilter) {
+    const filtroEstado = estadoFilter.value;
+
+    document
+      .querySelectorAll(".celda_tabla_sanciones td:nth-child(2)")
+      .forEach((celda) => {
+        const fila = celda.parentNode;
+
+        if (filtroEstado === "") {
+          fila.classList.remove("filtro_directorio");
+        } else {
+          const estado = celda.textContent.trim();
+          if (estado !== filtroEstado) {
+            fila.classList.add("filtro_directorio");
+          } else {
+            fila.classList.remove("filtro_directorio");
+          }
+        }
+      });
+  } else {
+    console.error(
+      "El campo de filtro de estado no se encontró en el documento."
+    );
+  }
+}
+// Esperar a que la página web esté completamente cargada antes de ejecutar el código
+window.addEventListener("load", function () {
+  console.log("Página web completamente cargada");
+
+  // Función para ejecutar la búsqueda por estado
+  function executeSearchByState() {
+    const estadoFilter = document.getElementById("estadoSancionesFilter");
+
+    if (estadoFilter) {
+      const filtroEstado = estadoFilter.value;
+
+      document
+        .querySelectorAll(".celda_tabla_sanciones td:nth-child(2)")
+        .forEach((celda) => {
+          const fila = celda.parentNode;
+
+          if (filtroEstado === "") {
+            fila.classList.remove("filtro_directorio");
+          } else {
+            const estado = celda.textContent.trim();
+            if (estado !== filtroEstado) {
+              fila.classList.add("filtro_directorio");
+            } else {
+              fila.classList.remove("filtro_directorio");
+            }
+          }
+        });
+    } else {
+      console.error(
+        "El campo de filtro de estado no se encontró en el documento."
+      );
+    }
+  }
+
+  // Esperar un breve período de tiempo antes de intentar obtener el elemento
+  setTimeout(function () {
+    const estadoFilter = document.getElementById("estadoSancionesFilter");
+    console.log("Elemento estadoFilter:", estadoFilter);
+    if (estadoFilter) {
+      console.log("El campo de filtro de estado se encontró en el documento.");
+      estadoFilter.addEventListener("change", executeSearchByState);
+    } else {
+      console.error(
+        "El campo de filtro de estado no se encontró en el documento."
+      );
+    }
+
+    // Ejecutar la búsqueda inicial por estado
+    executeSearchByState();
+  }, 100); // Esperar 100 milisegundos
+});
