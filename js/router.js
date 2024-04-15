@@ -20,6 +20,5 @@ const Router = () => {
     Carga_InventarioCOE();
   } else if (hash == "#/prestaciones/sanciones") {
     Carga_LoaderSanciones();
-    Carga_Sanciones();
   }
 };

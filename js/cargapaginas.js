@@ -114,12 +114,18 @@ function Carga_InventarioCOE() {
 //   xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
 //   xhttp.send();
 // }
-
 function Carga_LoaderSanciones() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("main").innerHTML = this.responseText;
+      // Mostrar el loader antes de enviar la solicitud para cargar las sanciones
+      var loader = document.getElementById("loaderSanciones");
+      if (loader) {
+        loader.style.display = "block";
+      }
+
+      // Cargar las sanciones después de cargar el loader
+      Carga_Sanciones();
     }
   };
   xhttp.open(
@@ -130,34 +136,27 @@ function Carga_LoaderSanciones() {
   xhttp.send();
 }
 
+var loaderVisible = true; // Variable para controlar la visibilidad del loader
+
 function Carga_Sanciones() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      // Ocultar el loader si existe
-      var loader = document.getElementById("loaderSanciones");
-      if (loader) {
-        loader.style.display = "none";
+      // Ocultar el loader solo si está visible
+      if (loaderVisible) {
+        var loader = document.getElementById("loaderSanciones");
+        if (loader) {
+          loader.style.display = "none";
+        }
+        loaderVisible = false; // Actualizar el estado del loader
       }
 
       // Limpiar el contenido actual del elemento main
-      document.getElementById("main").innerHTML = "";
-
-      // Dividir la respuesta en partes más pequeñas
-      let partes = this.responseText.split("<!-- SPLIT -->");
-
-      // Mostrar progresivamente las partes
-      mostrarPartes(partes);
+      document.getElementById("main").innerHTML = this.responseText;
     }
   };
   xhttp.open("GET", "/myproyecto/seccion/prestaciones/sanciones2.php", true);
   xhttp.send();
-}
-
-function mostrarPartes(partes) {
-  partes.forEach(function (parte) {
-    document.getElementById("main").insertAdjacentHTML("afterbegin", parte);
-  });
 }
 
 // Se carga la sección de planes

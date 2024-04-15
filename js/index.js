@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Carga_InventarioDP();
   } else if (miUrl === "http://localhost/myproyecto/#/prestaciones/sanciones") {
     Carga_LoaderSanciones();
-    Carga_Sanciones();
   }
 });
 
