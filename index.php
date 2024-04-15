@@ -12,7 +12,9 @@ include('menuhorizontal.php');
 ?>
 
 <main id="main">
+
     <h1>Hola Mundo de Nuevo</h1>
+
 </main>
 
 
@@ -24,8 +26,7 @@ include('menuhorizontal.php');
 
 
 <!--JS propio-->
-<script type="text/javascript" src="./js/cargapaginas.js"></script>
-<script type="text/javascript" src="./js/router.js"></script>
+
 <script type="text/javascript" src="./js/index.js"></script>
 
 
