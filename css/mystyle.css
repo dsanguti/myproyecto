@@ -432,20 +432,25 @@ input[type="search"]::-webkit-search-clear-button {
 .container_loader {
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
+  align-items: center; /* Alinear los elementos en la parte superior */
+  flex-direction: column; /* Apilar los elementos uno debajo del otro */
   height: 100vh; /* Altura total de la ventana del navegador */
 }
+
 /* Loader de sanciones*/
+
+/* HTML: <div class="loader"></div> */
 
 #loaderSanciones {
   width: 100px;
-  height: 100px;
+
   aspect-ratio: 1;
   display: grid;
   border: 4px solid #0000;
   border-radius: 50%;
   border-color: #ccc #0000;
   animation: l16 1s infinite linear;
+  margin-bottom: 25px;
 }
 #loaderSanciones::before,
 #loaderSanciones::after {
@@ -461,7 +466,7 @@ input[type="search"]::-webkit-search-clear-button {
   animation-duration: 0.5s;
   animation-direction: reverse;
 }
-.loaderSanciones::after {
+#loaderSanciones::after {
   margin: 8px;
 }
 @keyframes l16 {
@@ -469,20 +474,24 @@ input[type="search"]::-webkit-search-clear-button {
     transform: rotate(1turn);
   }
 }
-
-/*prueba temporal de loader*/
 /* HTML: <div class="loader"></div> */
-.loaderPrueba {
+#loaderSanciones2 {
+  width: fit-content;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: monospace;
   font-size: 30px;
-  animation: l1 1s linear infinite alternate;
+  color: #0000;
+  background: linear-gradient(90deg, #f03355 calc(50% + 0.5ch), #000 0)
+    right/calc(200% + 1ch) 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: l7 2s infinite steps(11);
 }
-.loaderPrueba:before {
-  content: "Loading...";
+#loaderSanciones2:before {
+  content: "Cargando datos ...";
 }
-@keyframes l1 {
+@keyframes l7 {
   to {
-    opacity: 0;
+    background-position: left;
   }
 }

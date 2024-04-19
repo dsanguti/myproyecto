@@ -392,36 +392,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Se carga la sección de sanciones de prestaciones
 
-  // function Carga_Sanciones() {
-  //   var xhttp = new XMLHttpRequest();
-  //   xhttp.onreadystatechange = function () {
-  //     if (this.readyState == 4 && this.status == 200) {
-  //       document.getElementById("main").innerHTML = this.responseText;
-  //     }
-  //   };
-  //   xhttp.open("GET", "../myproyecto/seccion/prestaciones/sanciones2.php", true);
-  //   xhttp.send();
-  // }
-
-  // function Carga_LoaderSanciones() {
-  //   // Mostrar el loader antes de enviar la solicitud para cargar las sanciones
-
-  //   var xhttp = new XMLHttpRequest();
-  //   xhttp.onreadystatechange = function () {
-  //     if (this.readyState == 4 && this.status == 200) {
-  //       // Cargar las sanciones después de cargar el loader
-  //       Carga_Sanciones();
-  //     }
-  //   };
-  //   xhttp.open(
-  //     "GET",
-  //     "../myproyecto/seccion/prestaciones/loader_sanciones.php",
-  //     true
-  //   );
-  //   xhttp.send();
-  // }
-
   function Carga_Sanciones() {
+    Carga_LoaderSanciones();
+    // Mostrar el loader antes de hacer la solicitud
+    var loader = document.getElementById("loaderSanciones");
+    if (loader) {
+      loader.style.display = "block"; // Cambiado de "grid" a "block"
+    }
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -429,7 +407,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("main").innerHTML = this.responseText;
 
         // Ocultar el loader después de cargar las sanciones
-        var loader = document.getElementById("loaderSanciones");
         if (loader) {
           loader.style.display = "none";
         }
@@ -439,7 +416,21 @@ document.addEventListener("DOMContentLoaded", () => {
     xhttp.send();
   }
 
-  // Llama a la función para cargar el loader y luego las sanciones
+  function Carga_LoaderSanciones() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        // Limpiar el contenido actual del elemento main
+        document.getElementById("main").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open(
+      "GET",
+      "/myproyecto/seccion/prestaciones/loader_sanciones.php",
+      true
+    );
+    xhttp.send();
+  }
 
   // Se carga la sección de planes
 
