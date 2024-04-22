@@ -29,7 +29,7 @@ session_start();
                             <input style="max-width:450px;" class="form-control me-2 input-dir-search" type="search"
                                 placeholder="Buscar en panel control" id="buscarDirectorio" aria-label="Search">
                             <i id="xSearchDir" class="bi bi-x-circle clear-search-dir icon-clear-dir"
-                                style="padding-right: 7px;" onclick="CerrarIconDirBuscar()"></i>
+                                style="padding-right: 7px;"></i>
                         </div>
 
                     </form>
