@@ -90,38 +90,42 @@ session_start();
                                     <?php while ($row = $result->fetch_assoc()) : ?>
                                     <tr class="celda_tabla_directorio">
 
-                                        <td style='display:none;'><?php echo $row['id'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['nombre'] ?>
+                                        <td class="buscar_datos" style='display:none;'><?php echo $row['id'] ?></td>
+                                        <td class="buscar_datos" style='text-align:center;'><?php echo $row['nombre'] ?>
                                         </td>
-                                        <td style='text-align:center;'><?php echo $row['apellido'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <?php echo $row['apellido'] ?>
                                         </td>
-                                        <td style='text-align:center;'>
+                                        <td class="buscar_datos" style='text-align:center;'>
                                             <?php echo $row['usuario'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['clave'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'><?php echo $row['clave'] ?>
                                         </td>
-                                        <td style='text-align:center;'><?php echo $row['perfil'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'><?php echo $row['perfil'] ?>
                                         </td>
-                                        <td style='text-align:center;'>
+                                        <td class="buscar_datos" style='text-align:center;'>
                                             <?php echo $row['directorio'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['inventario'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <?php echo $row['inventario'] ?>
                                         </td>
-                                        <td style='text-align:center;'><?php echo $row['estado'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'><?php echo $row['estado'] ?>
                                         </td>
-
-                                        <td style='text-align:center;'> <button id='btn-edit-PC' class='edit-table'
-                                                data-bs-toggle='modal'
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <button id='btn-edit-PC' class='edit-table' data-bs-toggle='modal'
                                                 data-bs-target='#modal-edit-PC<?php echo $row['id']; ?>'>
-                                                <i class='bi bi-pencil-square'></i></button>
-                                        <td style='text-align:center;'> <button id='btn-del-pc' class='del-table'
-                                                data-bs-toggle='modal'
-                                                data-bs-target='#modal-del-pc<?php echo $row['id']; ?>'><i
-                                                    class='bi bi-trash'></i></button>
-                                            <!-- El modal de editar-->
-                                            <?php include("./modal/modal_editar_pc.php"); ?>
+                                                <i class='bi bi-pencil-square'></i>
+                                            </button>
+                                        </td>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <button id='btn-del-pc' class='del-table' data-bs-toggle='modal'
+                                                data-bs-target='#modal-del-pc<?php echo $row['id']; ?>'>
+                                                <i class='bi bi-trash'></i>
+                                            </button>
+                                        </td>
+                                        <!-- El modal de editar-->
+                                        <?php include("./modal/modal_editar_pc.php"); ?>
 
-                                            <!-- El modal de Eliminar-->
-                                            <?php include("./modal/modal_eliminar_pc.php");
-                                                ?>
+                                        <!-- El modal de Eliminar-->
+                                        <?php include("./modal/modal_eliminar_pc.php"); ?>
 
 
                                     </tr>
