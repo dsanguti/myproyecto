@@ -203,7 +203,8 @@ input[type="search"]::-webkit-search-clear-button {
   -webkit-text-stroke: 1px;
   color: red;
 }
-.icon-clear-dir {
+/* Aumentando la especificidad */
+#xSearchDir.icon-clear-dir {
   display: none;
 }
 

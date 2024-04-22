@@ -29,7 +29,7 @@ session_start();
                     <form class="d-flex flex-row" role="search">
                         <div class="input-container-search">
                             <input style="max-width:450px;" class="form-control me-2 input-dir-search" type="search" placeholder="Buscar en directorio" id="buscarDirectorio" aria-label="Search">
-                            <i id="xSearchDir" class="bi bi-x-circle clear-search-dir icon-clear-dir" style="padding-right: 7px;" onclick="CerrarIconDirBuscar()"></i>
+                            <i id="xSearchDir" class="bi bi-x-circle clear-search-dir icon-clear-dir" style="padding-right: 7px;"></i>
                         </div>
 
                     </form>
@@ -92,42 +92,47 @@ session_start();
                                     <?php while ($row = $result->fetch_assoc()) : ?>
                                         <tr class="celda_tabla_directorio">
 
-                                            <td style='display:none;'><?php echo $row['id'] ?></td>
-                                            <td style='text-align:center;'><?php echo $row['puesto'] ?>
+                                            <td class="buscar_datos" style='display:none;'><?php echo $row['id'] ?></td>
+                                            <td class="buscar_datos" style='text-align:center;'><?php echo $row['puesto'] ?>
                                             </td>
-                                            <td style='text-align:center;'><?php echo $row['nombre'] ?>
+                                            <td class="buscar_datos" style='text-align:center;'><?php echo $row['nombre'] ?>
                                             </td>
-                                            <td style='text-align:center;'>
+                                            <td class="buscar_datos" style='text-align:center;'>
                                                 <?php echo $row['apellidos'] ?></td>
-                                            <td style='text-align:center;'><?php echo $row['oficina'] ?>
+                                            <td class="buscar_datos" style='text-align:center;'>
+                                                <?php echo $row['oficina'] ?>
                                             </td>
-                                            <td style='text-align:center;'><?php echo $row['telefono'] ?>
+                                            <td class="buscar_datos" style='text-align:center;'>
+                                                <?php echo $row['telefono'] ?>
                                             </td>
-                                            <td style='text-align:center;'>
+                                            <td class="buscar_datos" style='text-align:center;'>
                                                 <?php echo $row['extension'] ?></td>
-                                            <td style='text-align:center;'><?php echo $row['correo'] ?>
+                                            <td class="buscar_datos" style='text-align:center;'><?php echo $row['correo'] ?>
                                             </td>
                                             <?php
-
                                             if ($_SESSION["directorio"] === "editar") {
                                             ?>
-                                                <td style='text-align:center;'> <button id='btn-edit-directorio' class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
-                                                        <i class='bi bi-pencil-square'></i></button>
-                                                <td style='text-align:center;'> <button id='btn-del-directorio' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'><i class='bi bi-trash'></i></button>
-                                                    <!-- El modal de editar-->
-                                                    <?php include("./modal/modal_editar.php"); ?>
+                                                <td class="buscar_datos" style='text-align:center;'>
+                                                    <button id='btn-edit-directorio' class='edit-table' data-bs-toggle='modal' data-bs-target='#modal-edit-directorio<?php echo $row['id']; ?>'>
+                                                        <i class='bi bi-pencil-square'></i>
+                                                    </button>
+                                                </td>
+                                                <td class="buscar_datos" style='text-align:center;'>
+                                                    <button id='btn-del-directorio' class='del-table' data-bs-toggle='modal' data-bs-target='#modal-del-directorio<?php echo $row['id']; ?>'>
+                                                        <i class='bi bi-trash'></i>
+                                                    </button>
+                                                </td>
+                                                <!-- El modal de editar-->
+                                                <?php include("./modal/modal_editar.php"); ?>
 
-                                                    <!-- El modal de Eliminar-->
-                                                    <?php include("./modal/modal_eliminar.php");
-                                                    ?>
-
-                                                <?php
+                                                <!-- El modal de Eliminar-->
+                                                <?php include("./modal/modal_eliminar.php"); ?>
+                                            <?php
                                             }
-                                                ?>
+                                            ?>
 
-                                        </tr>
 
-                                    <?php endwhile; ?>
+                                        <?php endwhile; ?>
 
                                 </tbody>
                             </table>

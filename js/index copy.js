@@ -53,37 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     Carga_Sanciones();
   }
 
-  // Función para manejar el clic en el icono de búsqueda
-  function handleIconClick() {
-    console.log("Se hizo clic en el icono de búsqueda");
-    if (typeof CerrarIconDirBuscar === "function") {
-      CerrarIconDirBuscar();
-    } else {
-      console.log("La función CerrarIconDirBuscar no está definida");
-    }
-  }
-
-  // Evento de clic en el icono de búsqueda
-  document.addEventListener("click", (event) => {
-    if (event.target.id === "xSearchDir") {
-      handleIconClick();
-    }
-  });
-
-  // Evento de DOMContentLoaded para agregar el evento de clic al icono de búsqueda
-  document.addEventListener("DOMContentLoaded", () => {
-    const iconXdir = document.getElementById("xSearchDir");
-    console.log(iconXdir); // Verificar si el elemento existe
-    if (iconXdir) {
-      console.log("Evento de clic agregado al icono de búsqueda"); // Agregar este mensaje
-      iconXdir.addEventListener("click", handleIconClick);
-    }
-  });
+  // Función Buscar en el directorio
 
   let executeCode = true; // Variable para controlar si se ejecuta el código
 
   document.querySelectorAll(".celda_tabla_directorio").forEach((fila) => {
     const celdas = fila.querySelectorAll("td");
+    console.log(celdas[4].textContent); // Asumiendo que la oficina es la quinta columna
   });
 
   function executeSearchCode() {
@@ -91,16 +67,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const buscarDirectorio = document.getElementById("buscarDirectorio");
     const busqueda = buscarDirectorio.value.trim().toLocaleLowerCase();
 
+    console.log(iconXdir, buscarDirectorio);
+
     // Manejo de la visibilidad del ícono de limpieza
     iconXdir.classList.toggle("icon-clear-dir", busqueda === "");
 
     // Aplicar o quitar filtros a las filas basado en la búsqueda
     document.querySelectorAll(".celda_tabla_directorio").forEach((fila) => {
-      const celdas = fila.getElementsByClassName("buscar_datos");
+      const celdas = fila.querySelectorAll("td");
       const coincide = Array.from(celdas).some((celda) =>
         celda.textContent.toLocaleLowerCase().includes(busqueda)
       );
-      // Verificar si alguna celda coincide
+      console.log(coincide); // Verificar si alguna celda coincide
       fila.classList.toggle("filtro_directorio", !coincide);
     });
   }
@@ -109,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keyup", (e) => {
     if (executeCode) {
       if (e.target.matches("#buscarDirectorio")) {
+        console.log("Evento keyup detectado");
         if (e.key === "Escape") {
           e.target.value = "";
           executeSearchCode(); // Llama a la función para limpiar y filtrar
@@ -119,30 +98,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function CerrarIconDirBuscar() {
-    console.log("Función CerrarIconDirBuscar() llamada");
+  //Cerrar iconX BuscarDirectorio
+  document.addEventListener("DOMContentLoaded", () => {
+    // Agregar el evento click al icono de búsqueda
+    const iconXdir = document.getElementById("xSearchDir");
+    console.log(iconXdir); // Verificar si el elemento existe
+    if (iconXdir) {
+      iconXdir.addEventListener("click", () => {
+        console.log("Se hizo clic en el icono de búsqueda");
+        CerrarIconDirBuscar();
+      });
+    }
+  });
 
+  function CerrarIconDirBuscar() {
+    console.log("Función CerrarIconDirBuscar() llamada"); // Verificar si la función se está llamando
     const iconXdir = document.getElementById("xSearchDir");
     const buscarDirectorio = document.getElementById("buscarDirectorio");
 
     console.log("iconXdir:", iconXdir);
     console.log("buscarDirectorio:", buscarDirectorio);
 
-    // Restablecer el campo de búsqueda
+    if (iconXdir) {
+      iconXdir.classList.add("icon-clear-dir");
+    }
     if (buscarDirectorio) {
       buscarDirectorio.value = "";
     }
-
-    // Remover la clase "icon-clear-dir" del ícono de búsqueda
-    if (iconXdir) {
-      iconXdir.classList.add("icon-clear-dir");
-      console.log("Clase icon-clear-dir removida"); // Verificar si se remueve la clase correctamente
-    }
-
-    // Restablecer los filtros en la tabla
-    document.querySelectorAll(".celda_tabla_directorio").forEach((fila) => {
-      fila.classList.remove("filtro_directorio");
-      fila.style.display = ""; // Mostrar todas las filas nuevamente
+    document.querySelectorAll(".celda_tabla_directorio").forEach((celda) => {
+      console.log("Contenido de celda:", celda.textContent);
     });
   }
 

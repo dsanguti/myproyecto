@@ -102,48 +102,53 @@ session_start();
                                     <?php while ($row = $result->fetch_assoc()) : ?>
                                     <tr class="celda_tabla_directorio">
 
-                                        <td style='display:none;'><?php echo $row['id'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['cod_elemento'] ?>
+                                        <td class="buscar_datos" style='display:none;'><?php echo $row['id'] ?></td>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <?php echo $row['cod_elemento'] ?>
                                         </td>
-                                        <td style='text-align:center;'><?php echo $row['modelo'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'><?php echo $row['modelo'] ?>
                                         </td>
-                                        <td style='text-align:center;'>
+                                        <td class="buscar_datos" style='text-align:center;'>
                                             <?php echo $row['n_serie'] ?></td>
-                                        <td style='text-align:center;'><?php echo $row['ip'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'><?php echo $row['ip'] ?>
                                         </td>
-                                        <td style='text-align:center;'><?php echo $row['situacion'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <?php echo $row['situacion'] ?>
                                         </td>
-                                        <td style='text-align:center;'>
+                                        <td class="buscar_datos" style='text-align:center;'>
                                             <?php echo $row['estado'] ?></td>
-                                        <td style='text-align:center;'>
+                                        <td class="buscar_datos" style='text-align:center;'>
                                             <?php echo date('d-m-y', strtotime($row['f_inicio_mto'])); ?></td>
-                                        <td style='text-align:center; width:96px'>
+                                        <td class="buscar_datos" style='text-align:center; width:96px'>
                                             <?php echo date('d-m-y', strtotime($row['f_fin_mto'])); ?></td>
 
-                                        <td style='text-align:center;'><?php echo $row['proveedor'] ?>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <?php echo $row['proveedor'] ?>
                                         </td>
                                         <?php
-
                                             if ($_SESSION["inventario"] === "editar") {
                                             ?>
-                                        <td style='text-align:center;'> <button id='btn-edit-inventario'
-                                                class='edit-table' data-bs-toggle='modal'
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <button id='btn-edit-inventario' class='edit-table' data-bs-toggle='modal'
                                                 data-bs-target='#modal-edit-inventario<?php echo $row['id']; ?>'>
-                                                <i class='bi bi-pencil-square'></i></button>
-                                        <td style='text-align:center;'> <button id='btn-del-inventario'
-                                                class='del-table' data-bs-toggle='modal'
-                                                data-bs-target='#modal-del-inventario<?php echo $row['id']; ?>'><i
-                                                    class='bi bi-trash'></i></button>
-                                            <!-- El modal de editar-->
-                                            <?php include("./modal/modal_editar_inv.php"); ?>
+                                                <i class='bi bi-pencil-square'></i>
+                                            </button>
+                                        </td>
+                                        <td class="buscar_datos" style='text-align:center;'>
+                                            <button id='btn-del-inventario' class='del-table' data-bs-toggle='modal'
+                                                data-bs-target='#modal-del-inventario<?php echo $row['id']; ?>'>
+                                                <i class='bi bi-trash'></i>
+                                            </button>
+                                        </td>
+                                        <!-- El modal de editar-->
+                                        <?php include("./modal/modal_editar_inv.php"); ?>
 
-                                            <!-- El modal de Eliminar-->
-                                            <?php include("./modal/modal_eliminar_inv.php");
-                                                    ?>
-
-                                            <?php
+                                        <!-- El modal de Eliminar-->
+                                        <?php include("./modal/modal_eliminar_inv.php"); ?>
+                                        <?php
                                             }
-                                                ?>
+                                            ?>
+
 
                                     </tr>
 
